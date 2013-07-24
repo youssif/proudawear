@@ -33,6 +33,7 @@ end
 gem 'better_errors'
 gem 'binding_of_caller'
 
+gem 'foreman'
 gem 'devise'
 gem 'koala'
 gem 'jquery-rails'
