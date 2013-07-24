@@ -8,7 +8,7 @@ Proudawear::Application.routes.draw do
 
   resources :users
 
-  match '/auth/:provider/callback' => 'sessions#create'
+  # match '/auth/:provider/callback' => user_omniauth_callback_path
   match '/signin' => 'sessions#new', :as => :signin
   match '/signout' => 'sessions#destroy', :as => :signout
   match '/auth/failure' => 'sessions#failure'
