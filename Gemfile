@@ -7,6 +7,8 @@ gem 'rails', '3.2.13'
 
 group :development do
   gem 'sqlite3'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :production do
@@ -18,7 +20,6 @@ end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'koala'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -26,9 +27,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'better_errors'
-
+gem 'devise'
+gem 'koala'
 gem 'jquery-rails'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
