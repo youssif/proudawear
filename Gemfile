@@ -27,6 +27,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'foreman'
 gem 'devise'
 gem 'koala'
 gem 'jquery-rails'
