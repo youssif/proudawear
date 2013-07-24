@@ -1,11 +1,11 @@
  # it gets a little redundant always passing in your Facebook application ID and secret to create new instances of the OAuth class
 
 development:
-  app_id: YOUR APP ID
-  secret_key: YOUR SECRET
+ app_id: ENV['FB_APP_ID']
+ secret_key: ENV['FB_SECRET_ID']
 test:
-  app_id: YOUR APP ID
-  secret_key: YOUR SECRET
+ app_id: ENV['FB_APP_ID']
+ secret_key: ENV['FB_SECRET_ID']
 production:
-  app_id: YOUR APP ID
-  secret_key: YOUR SECRET
+ app_id: ENV['FB_APP_ID']
+ secret_key: ENV['FB_SECRET_ID']
