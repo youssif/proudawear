@@ -4,8 +4,19 @@ Proudawear::Application.routes.draw do
 
   resources :reviews
 
+  root :to => "home#index"
 
   resources :users
+
+  # match '/auth/:provider/callback' => user_omniauth_callback_path
+  match '/signin' => 'sessions#new', :as => :signin
+  match '/signout' => 'sessions#destroy', :as => :signout
+  match '/auth/failure' => 'sessions#failure'
+  match '/auth/:provider/callback' => 'Users#create'
+
+  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
 
 
   # root :to => "posts#create"
