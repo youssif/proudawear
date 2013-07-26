@@ -11,9 +11,7 @@
   </tr>
 
 <% @posts.each do |post| %>
-  <tr>
-    
-    
+  <tr>    
     <% if post.picture.present? %>
         <td><%= image_tag post.picture, width: '60'%></td>
     <% else %>
