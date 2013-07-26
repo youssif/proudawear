@@ -12,8 +12,11 @@
 
 <% @posts.each do |post| %>
   <tr>
-    
-    <td><%= image_tag post.picture, width: '80' %></td>
+    <% if post.picture.present? %>
+        <td><%= image_tag post.picture, width: '80' %></td>
+    <% else %>
+        <td></td>
+    <% end %>
     <td><%= post.title %></td>
     <td><%= post.description %></td>
     <td><%= link_to 'Show', post %></td>
