@@ -2,7 +2,11 @@
 
 <p>
   <b>Picture:</b>
-  <%= image_tag @post.picture %>
+   <% if @post.picture.present? %>
+        <%= image_tag @post.picture, width: '80' %>
+    <% else %>
+    <p>N/A</p>
+    <% end %>
 </p>
 
 <p>
