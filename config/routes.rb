@@ -21,9 +21,18 @@ Proudawear::Application.routes.draw do
   #   get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   # end
 
-
+  root :to => "home#index"
 
   # root :to => "posts#create"
+  match '/auth/:provider/callback' => 'sessions#create'
+  match '/signin' => 'sessions#new', :as => :signin
+  match '/signout' => 'sessions#destroy', :as => :signout
+  match '/auth/failure' => 'sessions#failure'
+
+  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
