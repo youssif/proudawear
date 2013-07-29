@@ -1,8 +1,10 @@
 Proudawear::Application.routes.draw do
-  resources :posts
 
+  resources :posts do 
+    resources :reviews
+  end
 
-  resources :reviews
+    => 'reviews#create'
 
 
   resources :users
