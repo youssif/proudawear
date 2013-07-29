@@ -1,8 +1,12 @@
 Proudawear::Application.routes.draw do
-  resources :posts
 
+  resources :posts do 
+    resources :reviews
+  end
 
-  resources :reviews
+  post '/reviews' => 'review#create'
+
+    # => 'reviews#create'
 
   root :to => "home#index"
 

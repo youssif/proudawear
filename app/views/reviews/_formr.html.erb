@@ -1,4 +1,4 @@
-<%= form_for(@review) do |f| %>
+<%= form_for [@post, @review] do |f| %>
   <% if @review.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
@@ -9,15 +9,13 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+  <% end %> 
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%#= f.label :name %><br />
   </div>
   <div class="field">
-    <%= f.label :picture %><br />
-    <%= f.text_field :picture %>
+    <%#= f.label :picture %><br />
   </div>
   <div class="field">
     <%= f.label :review %><br />
@@ -27,3 +25,5 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+

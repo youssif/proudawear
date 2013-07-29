@@ -11,11 +11,11 @@
   </tr>
 
 <% @posts.each do |post| %>
-  <tr>
+  <tr>    
     <% if post.picture.present? %>
-        <td><%= image_tag post.picture, width: '80' %></td>
+        <td><%= image_tag post.picture, width: '60'%></td>
     <% else %>
-        <td></td>
+        <td>N/A</td>
     <% end %>
     <td><%= post.title %></td>
     <td><%= post.description %></td>

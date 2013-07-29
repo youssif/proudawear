@@ -1,6 +1,6 @@
 class Review < ActiveRecord::Base
-  attr_accessible :name, :picture, :review
+  attr_accessible :name, :picture, :review, :post_id
   mount_uploader :picture, PicturesUploader
 
-  belongs_to :user
+  belongs_to :post
 end
