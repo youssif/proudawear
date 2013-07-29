@@ -23,5 +23,21 @@
 
 <%= render 'reviews/formr' %>
 
+<div class = "review_container">
+  <% @reviews.each do |review| %>  
+    <div class = "reviews_all">
+      <div class = "name"> 
+        <%= review.name %>
+      </div>
+      <div class = "picture"> 
+        <%= review.picture %>
+      </div>
+      <div class = "review"> 
+        <%= review.review %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

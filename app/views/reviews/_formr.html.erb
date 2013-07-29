@@ -1,11 +1,21 @@
-<%= form_for @review, :url => review_path, :html => {:method => :post/:put } do |f| %>
+<%= form_for [@post, @review] do |f| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
 
+      <ul>
+      <% @review.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %> 
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%#= f.label :name %><br />
   </div>
   <div class="field">
-    <%= f.label :picture %><br />
+    <%#= f.label :picture %><br />
   </div>
   <div class="field">
     <%= f.label :review %><br />
@@ -15,3 +25,5 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+

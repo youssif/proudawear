@@ -4,7 +4,9 @@ Proudawear::Application.routes.draw do
     resources :reviews
   end
 
-    => 'reviews#create'
+  post '/reviews' => 'review#create'
+
+    # => 'reviews#create'
 
 
   resources :users
