@@ -42,7 +42,7 @@ class ReviewsController < ApplicationController
   def create
 
     #ties the post id to the review
-    @review = Review.create(params[:review].merge(post_id: params[:post_id]))
+    @review = Review.create(params[:review].merge(post_id: params[:post_id]).merge(user_id: session[:user_id]))
 
     redirect_to :back
     # respond_to do |format|

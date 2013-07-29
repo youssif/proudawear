@@ -36,7 +36,7 @@ gem 'binding_of_caller'
 
 gem 'foreman'
 gem 'devise'
-gem 'koala'
+gem 'koala', '~> 1.7.0rc1'
 gem 'jquery-rails'
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
