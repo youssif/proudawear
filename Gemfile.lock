@@ -163,7 +163,7 @@ DEPENDENCIES
   jquery-rails
   koala
   omniauth
-  omniauth-facebook (~> 1.4.0)
+  omniauth-facebook
   pg
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
