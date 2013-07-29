@@ -3,4 +3,8 @@ class ApplicationController < ActionController::Base
 
 
 
+  def correct_user?
+    User.find(params[:id]) == current_user
+  end
+
 end

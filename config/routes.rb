@@ -4,22 +4,29 @@ Proudawear::Application.routes.draw do
     resources :reviews
   end
 
+  resources :users, path: 'fashionistas'
+
+
   post '/reviews' => 'review#create'
 
     # => 'reviews#create'
 
-  root :to => "home#index"
+  root :to => "posts#index"
 
-  resources :users
 
-  # match '/auth/:provider/callback' => user_omniauth_callback_path
   match '/signin' => 'sessions#new', :as => :signin
   match '/signout' => 'sessions#destroy', :as => :signout
   match '/auth/failure' => 'sessions#failure'
   match '/auth/:provider/callback' => 'Users#create'
 
-  devise_for :users
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
+ 
+
+  # devise_scope :user do
+  #   get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session
+  #   get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  # end
 
 
 

@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  attr_accessible :provider, :uid, :name
-  before_filter :authenticate_user!
-  before_filter :correct_user?, :except => [:index]
+  # attr_accessible :provider, :uid, :name
+  before_filter :authenticate_user!, :correct_user?, :except => [:index]
 
+ 
 
   # GET /users
   # GET /users.json
