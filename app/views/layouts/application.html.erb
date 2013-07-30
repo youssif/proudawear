@@ -1,17 +1,42 @@
 <!DOCTYPE html>
-<html>
+
+<!-- i had to install bower as well as classie look up documentation on that for questions
+ -->
+
 <head>
-  <title>Proudawear</title>
+  <!-- Latest version of jQuery -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  
+<!--   Set the viewport width to device width for mobile
+ -->  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!--   >Includes all the js files assets/stylesheets</!
+ -->
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+
+<!--   >Includes all the js files assets/javascripts</!
+ -->  <%= javascript_include_tag "application" %>
+
+
+
+<!--   >The csrf_meta_tag inserts what is essentially a digitial signature into the page. It acts as a verification that the requests coming into the application server are from properly logged in users</!
+ -->  <%= csrf_meta_tags %>
+  
+  <title>proudawear</title>
+  
+  <script src="/javascripts/masonry.pkgd.js"></script>
+
 </head>
+
 <body>
-	<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-	<%= link_to 'Logout', signout_path, :class => 'smallbrand' %>
-	<p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <!-- Page Layout HTML here -->
+  | <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> |
+    <%= link_to 'Logout', signout_path, :class => 'smallbrand' %> |
+    <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 <%= yield %>
+
+
 
 </body>
 </html>

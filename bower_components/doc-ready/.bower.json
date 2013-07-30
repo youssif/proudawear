@@ -1,0 +1,18 @@
+{
+  "name": "doc-ready",
+  "version": "1.0.1",
+  "description": "Let's get this party started... when the document is ready",
+  "main": "doc-ready.js",
+  "dependencies": {
+    "eventie": "desandro/eventie"
+  },
+  "homepage": "https://github.com/desandro/doc-ready",
+  "_release": "1.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.1",
+    "commit": "de7256b2b0113af2a07e2041767f791e38d5a28a"
+  },
+  "_source": "git://github.com/desandro/doc-ready.git",
+  "_target": ">=1.0.1 <2.0"
+}
