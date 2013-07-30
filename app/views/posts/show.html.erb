@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Picture:</b>
+  <b>Outfit:</b>
 
    <% if @post.picture.present? %>
         <%= image_tag @post.picture, width: '80' %>
@@ -9,6 +9,8 @@
     <p>N/A</p>
     <% end %>
 </p>
+
+<h3><%=@post.name%></h3>
 
 <p>
   <b>Title:</b>
@@ -26,16 +28,15 @@
 
 <div class = "review_container">
   <% @reviews.each do |review| %>  
-    <div class = "reviews_all">
-      <div class = "name"> 
-        <%= review.name %>
-      </div>
-      <div class = "picture"> 
-        <%= review.picture %>
-      </div>
-      <div class = "review"> 
-        <%= review.review %>
-      </div>
+    <div class = "name">
+      <%= image_tag review.picture, width: '40' %>
+      <span><%= review.name %></span>
+        
+    </div>
+
+    <div class = "review_body">
+      <b>Advice:</b>
+      <%= review.review %>
     </div>
   <% end %>
 </div>
