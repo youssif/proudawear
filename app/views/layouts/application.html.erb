@@ -7,6 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<header>
+	<%= link_to 'proudawear', posts_path %>
 	<% if current_user %>
 		<%= image_tag current_user.image, width: '30' %><span> <%="Logged in as #{current_user.name}" %>
 		</span>
@@ -14,8 +17,11 @@
 		<%= link_to 'Logout', signout_path, :class => 'view_logout' %> 
 	<% else %>
 		<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-		
+
 	<% end %>	
+
+
+</header>
 	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 <%= yield %>

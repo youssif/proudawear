@@ -14,6 +14,15 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+    @last_post_id = Post.last.id
+    @first_post_id = Post.first.id
+    @params = params[:id].to_i
+    unless @last_post_id == @params
+      @next_post = Post.find(@params+1)
+    end
+    unless @first_post_id == @params
+      @previous_post = Post.find(@params-1)
+    end
     @review = @post.reviews.build
     @reviews = @post.reviews.all
     respond_to do |format|

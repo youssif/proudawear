@@ -42,5 +42,11 @@
   <% end %>
 </div>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<% if @next_post %>
+  <%= link_to 'Next post', @next_post %>
+<% end %>
+<% if @previous_post %>
+  <%= link_to 'Previous post', @previous_post %>
+<% end %>
+
+
