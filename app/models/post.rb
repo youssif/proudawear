@@ -3,4 +3,6 @@ class Post < ActiveRecord::Base
   mount_uploader :picture, PicturesUploader
   belongs_to :user
   has_many :reviews
+  validates :picture, presence: true
+
 end

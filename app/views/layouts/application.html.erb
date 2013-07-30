@@ -8,9 +8,10 @@
 </head>
 <body>
 	<% if current_user %>
-		<span> <%="Logged in as #{current_user.name}" %>
+		<%= image_tag current_user.image, width: '30' %><span> <%="Logged in as #{current_user.name}" %>
 		</span>
-		<%= link_to 'Logout', signout_path, :class => 'smallbrand' %> 
+		<%= link_to 'Previous Posts', current_user, :class => 'view_logout' %> |
+		<%= link_to 'Logout', signout_path, :class => 'view_logout' %> 
 	<% else %>
 		<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
 		
