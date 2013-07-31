@@ -17,6 +17,7 @@ group :production do
 end
 
 gem 'carrierwave'
+gem 'masonry-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.

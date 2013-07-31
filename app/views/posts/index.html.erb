@@ -1,65 +1,17 @@
 <h1>Posts</h1>
 
-<!-- This is an example of how to use masonry. For more help visit https://masonry.desandro.com -->
-<!-- <div id="container" class="js-masonry" data-masonry-options='{ "columnWidth": 200, "itemSelector": ".item" }'> -->
 
-<!-- Masonry Container -->
-<h1>Masonry - layout</h1>
-<p>Click to toggle item size</p>
-<div class="masonry">
-  <div class="item"></div>
-  <div class="item w2 h2"></div>
-  <div class="item h3"></div>
-  <div class="item h2"></div>
-  <div class="item w3"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item h2"></div>
-  <div class="item w2 h3"></div>
-  <div class="item"></div>
-  <div class="item h2"></div>
-  <div class="item"></div>
-  <div class="item w2"></div>
-  <div class="item"></div>
-  <div class="item h2"></div>
-  <div class="item"></div>
-  <div class="item w3"></div>
-  <div class="item"></div>
-  <div class="item h2"></div>
+<h1>Masonry - appended</h1>
+
+   <div id="masonryContainer" class= "transitions-enabled infinite-scroll clearfix has-gutters"></div>
+  <% @posts.each do |post| %>
+    <div class= "masonry-brick box col">
+      <%= link_to image_tag(post.picture_url), post %>
+    </div>
+  <% end %>
 </div>
 
 
 
 
-<div class="table">
-<table>
-  <tr>
-    <th>Picture</th>
-    <th>Title</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-<br>
 
-<% @posts.each do |post| %>
-  <tr>    
-    <% if post.picture.present? %>
-        <td><%= image_tag post.picture, width: '60'%></td>
-    <% else %>
-        <td>N/A</td>
-    <% end %>
-    <td><%= post.title %></td>
-    <td><%= post.description %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-</div>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
