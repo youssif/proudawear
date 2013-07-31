@@ -1,14 +1,14 @@
 <h1>Posts</h1>
 
 
-<h1>Masonry - appended</h1>
-
-   <div id="masonryContainer" class= "transitions-enabled infinite-scroll clearfix has-gutters"></div>
-  <% @posts.each do |post| %>
-    <div class= "masonry-brick box col images">
-      <%= link_to image_tag(post.picture_url), post %>
-    </div>
-  <% end %>
+<div class="contain">
+	<div id="container" class= "js-masonry transitions-enabled infinite-scroll clearfix has-gutters" data-masonry-options='{ "columnWidth": 0, "itemSelector": ".item" }'>
+	  <% @posts.each do |post| %>
+	    <div class= "masonry-brick box col images item">
+	      <%= link_to image_tag(post.picture_url), post %>
+	    </div>
+	  <% end %>
+	</div>
 </div>
 
 

@@ -6,29 +6,7 @@
 
 // http://masonry.desandro.com/masonry.pkgd.js added as external resource
 
-// $(window).load(function(){
-//   $('#masonryContainer').masonry({  
-//     itemSelector: '.masonry-brick',
-//     columnWidth: 240
-//   });  
-// });    
 
-$(window).load(function(){
-	var container = document.querySelector('#masonryContainer');
-	var msnry = new Masonry( container, {
-		columnWidth: 140,
-		itemSelector: '.masonry-brick'
-	});
-	console.log("HERE HERE HERE");
-});
-
-$(function(){
-  $('#masonry-container').masonry({
-    itemSelector: '.box',
-    columnWidth: 100,
-    gutterWidth: 40
-  });
-});
 
 
 
