@@ -42,11 +42,13 @@
   <% end %>
 </div>
 
-<% if @next_post %>
-  <%= link_to 'Next post', @next_post %>
+
+<% if @post.previous_post %>
+  <%= link_to 'Previous post', @post.previous_post %>
 <% end %>
-<% if @previous_post %>
-  <%= link_to 'Previous post', @previous_post %>
+
+<% if @post.next_post %>
+  <%= link_to 'Next post', @post.next_post %>
 <% end %>
 
 

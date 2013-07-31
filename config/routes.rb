@@ -1,5 +1,13 @@
 Proudawear::Application.routes.draw do
 
+  get "votes/create"
+
+  get "votes/new"
+
+  get "votes/edit"
+
+  get "votes/delete"
+
   resources :posts do 
     resources :reviews
   end
