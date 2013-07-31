@@ -5,7 +5,7 @@
 
    <div id="masonryContainer" class= "transitions-enabled infinite-scroll clearfix has-gutters"></div>
   <% @posts.each do |post| %>
-    <div class= "masonry-brick box col">
+    <div class= "masonry-brick box col images">
       <%= link_to image_tag(post.picture_url), post %>
     </div>
   <% end %>

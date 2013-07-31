@@ -17,12 +17,31 @@ class PostsController < ApplicationController
     @last_post_id = Post.last.id
     @first_post_id = Post.first.id
     @params = params[:id].to_i
+    
+    i = 1
+    x = 1
     unless @last_post_id == @params
-      @next_post = Post.find(@params+1)
+      until Post.find(@params-i) 
+        i +=1
+      end
+      until Post.find(@params+x)
+        x +=1
+      end
+      @previous_post = Post.find(@params-i)
+      @next_post = Post.find(@params+x)
     end
+
     unless @first_post_id == @params
-      @previous_post = Post.find(@params-1)
+      until Post.find(@params-i)
+        i +=1
+      end
+      until Post.find(@params+x)
+        x +=1
+      end
+      @previous_post = Post.find(@params-i)
+      @next_post = Post.find(@params+x)
     end
+
     @review = @post.reviews.build
     @reviews = @post.reviews.all
     respond_to do |format|

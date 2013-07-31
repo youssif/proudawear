@@ -5,7 +5,7 @@
 h1 { text-align: center;}
 
 // .images {
-// 	position: absolute;
+// 	position: relative;
 // }
 
 // .masonry-brick { width: 120px;
@@ -13,12 +13,13 @@ h1 { text-align: center;}
 // 								 float: left; 
 // 								 z-index: 1; 
 // }
-// #masonryContainer { width: 102%;
-// 										// position: relative;
-// 										// scroll:auto;
-//  } 
 
-#masonry-container {
+// #masonryContainer { width: 102%;
+// 										position: relative;
+// 										scroll:auto;
+// } 
+
+#masonryContainer {
   background: #FFF;
   padding: 5px;
   margin-bottom: 20px;

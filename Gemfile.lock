@@ -176,8 +176,8 @@ DEPENDENCIES
   devise
   foreman
   jquery-rails
-  masonry-rails
   koala (~> 1.7.0rc1)
+  masonry-rails
   mini_magick
   omniauth
   omniauth-facebook (= 1.4.0)
