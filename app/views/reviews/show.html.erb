@@ -5,10 +5,10 @@
   <%= @review.name %>
 </p>
 
-<p>
+<div>
   <b>Picture:</b>
-  <%= @review.picture %>
-</p>
+  <%= image_tag @review.picture, width: '80' %>
+</div>
 
 <p>
   <b>Review:</b>

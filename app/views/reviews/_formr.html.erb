@@ -12,10 +12,10 @@
   <% end %> 
 
   <div class="field">
-    <%#= f.label :name %><br />
+    <p><%= current_user.name %></p><br />
   </div>
   <div class="field">
-    <%#= f.label :picture %><br />
+    <%= image_tag current_user.image, width: '80' %>
   </div>
   <div class="field">
     <%= f.label :review %><br />

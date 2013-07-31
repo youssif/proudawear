@@ -18,6 +18,8 @@ end
 
 gem 'carrierwave'
 gem 'masonry-rails'
+gem 'mini_magick'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -38,7 +40,7 @@ gem 'binding_of_caller'
 
 gem 'foreman'
 gem 'devise'
-gem 'koala'
+gem 'koala', '~> 1.7.0rc1'
 gem 'jquery-rails'
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'

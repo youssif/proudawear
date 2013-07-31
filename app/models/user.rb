@@ -5,9 +5,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :provider, :description, :name, :uid
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :provider, :description, :name, :uid, :image, :nickname
   validates_presence_of :name
-  has_many :reviews 
+  has_many :reviews
+  has_many :posts 
 
   def self.create_with_omniauth(auth)
     create! do |user|
@@ -26,12 +27,20 @@ class User < ActiveRecord::Base
       @user = User.create(name:auth.extra.raw_info.name,
                            provider:auth.provider,
                            uid:auth.uid,
+                           nickname:auth.info.nickname,
+                           image:auth.info.image,
                            email:auth.info.email,
+                           # image: auth.info.secure_image_url,
                            password:Devise.friendly_token[0,20]
                            )
     else 
       @user = User.where(:provider => auth.provider, :uid => auth.uid).first
     end
+
+    #add image
+    # if auth.info.image.present?
+    #   @user.update_attribute(:image, auth.info.image)
+    # end
     
     @user
   end

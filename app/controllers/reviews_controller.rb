@@ -42,8 +42,11 @@ class ReviewsController < ApplicationController
   def create
 
     #ties the post id to the review
-    @review = Review.create(params[:review].merge(post_id: params[:post_id]))
-
+    @review = Review.create(params[:review].merge(post_id: params[:post_id]).merge(picture: current_user[:image]).merge(name:current_user[:name]))
+    # user = current_user
+    # @review[:picture] = user.image
+    # @review.name = user.name
+    # @user = User.where(user_id==@review.user_id)
     redirect_to :back
     # respond_to do |format|
     #   if @review.save
