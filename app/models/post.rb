@@ -4,5 +4,15 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :reviews
   validates :picture, presence: true
+  has_many :votes
+
+  def next_post
+    @next_post = Post.find(:first, :conditions => ["id > ?", self.id])
+  end
+
+  def previous_post
+    @previous_post = Post.find(:last, :conditions => ["id < ?", self.id])
+  end
+
 
 end

@@ -3,23 +3,24 @@ class Review < ActiveRecord::Base
 
   belongs_to :post
   belongs_to :user
-
-  def initialize
-    @rate_good = 0
-    @rate_bad = 0
-  end
-
-  def rate_good
-    @rate_good += 1
-  end
-
-  def rate_bad
-    @rate_bad -= 1 
-  end
-
-  def total_rating
-    @rate_good_percent = (@rate_good / (@rate_good + @rate_bad)*100).to_s + "%"
-    @rate_bad_percent = @rate_bad / (@rate_good + @rate_bad)*100.to_s + "%"
-  end
+  
+  after_initialize :init
 
 end
+
+
+#Vote Model Notes
+# Vote
+# user_id
+# post_id
+# rating :boolean
+
+# Post
+# def positive_votes
+#   self.votes.where(rating: true)
+# end
+
+# def positive_percentage
+#   self
+  
+# end

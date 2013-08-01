@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :provider, :description, :name, :uid, :image, :nickname
   validates_presence_of :name
   has_many :reviews
-  has_many :posts 
+  has_many :posts
+  has_many :votes
 
   def self.create_with_omniauth(auth)
     create! do |user|
