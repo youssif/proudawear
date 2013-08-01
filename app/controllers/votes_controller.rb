@@ -1,6 +1,6 @@
 class VotesController < ApplicationController
   def create
-    @vote = Vote.create(params[:vote].merge(user_id: current_user.id)
+    @vote = Vote.create(params[:vote].merge(user_id: current_user.id))
   end
 
   def new
