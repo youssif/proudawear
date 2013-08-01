@@ -4,38 +4,19 @@
 
 h1 { text-align: center;}
 
-// .images {
-// 	position: relative;
-// }
 
-// .masonry-brick { width: 120px;
-// 								 margin: 10px; 
-// 								 float: left; 
-// 								 z-index: 1; 
-// }
-
-// #masonryContainer { width: 102%;
-// 										position: relative;
-// 										scroll:auto;
-// } 
-
-#masonryContainer {
-  background: #FFF;
-  padding: 5px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  clear: both;
-  -webkit-border-radius: 5px;
-     -moz-border-radius: 5px;
-          border-radius: 5px;
+.item { width: 25%;
+    
 }
 
-.clearfix:before, .clearfix:after { content: ""; display:table; }
-.clearfix:after { clear: both; }
-.clearfix { zoom: 1; }
+.contain { margin-left: 150px;
+           width: 100%;
 
-.col { width: 200px; }
-.col img { max-width: 200px; }
+}
+
+#container { margin: 0 auto;
+}
+
 
 
 
