@@ -10,6 +10,11 @@ Proudawear::Application.routes.draw do
 
   resources :posts do 
     resources :reviews
+    resources :votes
+    member do
+      post :upvote
+      post :downvote
+    end
   end
 
   resources :users, path: 'fashionistas'

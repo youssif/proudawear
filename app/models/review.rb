@@ -4,8 +4,6 @@ class Review < ActiveRecord::Base
   belongs_to :post
   belongs_to :user
   
-  after_initialize :init
-
 end
 
 

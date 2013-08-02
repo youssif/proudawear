@@ -14,7 +14,8 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
-
+    @vote = @post.votes.build
+    @votes = @post.votes.all
     @review = @post.reviews.build
     @reviews = @post.reviews.all
     respond_to do |format|
@@ -81,5 +82,17 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url }
       format.json { head :no_content }
     end
+  end
+
+  def upvote
+    @vote =Vote.create(user_id: current_user.id, post_id: params[:id], rating: true)
+    @vote.save
+    redirect_to :back
+  end
+
+  def downvote
+    @vote =Vote.create(user_id: current_user.id, post_id: params[:id], rating: false)
+    @vote.save
+    redirect_to :back
   end
 end
