@@ -2,21 +2,38 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1 { text-align: center;}
-
-
-.item { width: 25%;
-    
+h1 { text-align: center;
 }
 
-.contain { margin-left: 150px;
-           width: 100%;
+div#container {
+	// min-width: 800px;
+	width: 100%;
+}
+// .item { width: 28%;
+// }
 
+.photos .photo {
+  width: 28%;
+  margin: 5px;
+  float: left;
 }
 
-#container { margin: 0 auto;
+.photos .photo img {
+  display: block;
+  width: 100%;
 }
 
 
 
+// .js-masonry .infinite-scroll .clearfix .centered { height: 10000px;
+// }
 
+// #container { margin: 0 auto;
+
+// }
+
+// .masonry-brick .box .col .images .item { margin: 0;
+// }
+
+// .centered { margin: 0 auto;
+// }

@@ -1,89 +1,13 @@
 <h1>Posts</h1>
 
 
-<div class="contain">
-	<div id="container" class= "js-masonry transitions-enabled infinite-scroll clearfix has-gutters" data-masonry-options='{ "columnWidth": 0, "itemSelector": ".item" }'>
+
+<div id="container" class= "js-masonry centered photos clearfix" data-masonry-options='{ "columnWidth": 0, "itemSelector": ".item", "gutter": 3 }'>
 	  <% @posts.each do |post| %>
-	    <div class= "masonry-brick box col images item">
+	    <div class= "box item photo centered">
 	      <%= link_to image_tag(post.picture_url), post %>
 	    </div>
 	  <% end %>
 	</div>
-</div>
-<!-- 
-<div class="grid mason-gallery masonry">
-    <div class="col-1-4 masonry-brick">
-        <div class="module-no-pad">
-            <span class="lightbox-gallery">
-                <a href="http://brewcheephotography.com/wp-content/uploads/2013/05/cameron-9-month-7370.jpg" rel="lightbox[gallery]"><img width="225" height="337" src="http://brewcheephotography.com/wp-content/uploads/2013/05/cameron-9-month-7370-225x337.jpg" class="attachment-thumbnail wp-post-image" alt="Polka Dot Brick Wall"></a>
-            </span>
-        </div>
-    </div>
-    <div class="col-1-4 masonry-brick">
-        <div class="module-no-pad">
-            <span class="lightbox-gallery">
-                <a href="http://brewcheephotography.com/wp-content/uploads/2013/05/cameron-9-month-7406.jpg" rel="lightbox[gallery]"><img width="225" height="150" src="http://brewcheephotography.com/wp-content/uploads/2013/05/cameron-9-month-7406-225x150.jpg" class="attachment-thumbnail wp-post-image" alt="Baby on Steps"></a>
-            </span>
-        </div>
-    </div>
-    <div class="col-1-4 masonry-brick">
-        <div class="module-no-pad">
-            <span class="lightbox-gallery">
-                <a href="http://brewcheephotography.com/wp-content/uploads/2013/04/IMG_5744.jpg" rel="lightbox[gallery]"><img width="225" height="337" src="http://brewcheephotography.com/wp-content/uploads/2013/04/IMG_5744-225x337.jpg" class="attachment-thumbnail wp-post-image" alt="Pleased Baby"></a>
-            </span>
-        </div>
-    </div>
-    <div class="col-1-4 masonry-brick">
-        <div class="module-no-pad">
-            <span class="lightbox-gallery">
-                <a href="http://brewcheephotography.com/wp-content/uploads/2013/01/IMG_1964.jpg" rel="lightbox[gallery]"><img width="225" height="150" src="http://brewcheephotography.com/wp-content/uploads/2013/01/IMG_1964-225x150.jpg" class="attachment-thumbnail wp-post-image" alt="Baby Lights"></a>
-            </span>
-        </div>
-    </div>
-    <div class="col-1-4 masonry-brick">
-        <div class="module-no-pad">
-            <span class="lightbox-gallery">
-                <a href="http://brewcheephotography.com/wp-content/uploads/2013/01/IMG_2160.jpg" rel="lightbox[gallery]"><img width="225" height="150" src="http://brewcheephotography.com/wp-content/uploads/2013/01/IMG_2160-225x150.jpg" class="attachment-thumbnail wp-post-image" alt="Christmas Present"></a>
-            </span>
-        </div>
-    </div>
-    <div class="col-1-4 masonry-brick">
-        <div class="module-no-pad">
-            <span class="lightbox-gallery">
-                <a href="http://brewcheephotography.com/wp-content/uploads/2013/01/IMG_0668.jpg" rel="lightbox[gallery]"><img width="225" height="150" src="http://brewcheephotography.com/wp-content/uploads/2013/01/IMG_0668-225x150.jpg" class="attachment-thumbnail wp-post-image" alt="Halloween"></a>
-            </span>
-        </div>
-    </div>
-    <div class="col-1-4 masonry-brick">
-        <div class="module-no-pad">
-            <span class="lightbox-gallery">
-                <a href="http://brewcheephotography.com/wp-content/uploads/2013/01/IMG_0650.jpg" rel="lightbox[gallery]"><img width="225" height="150" src="http://brewcheephotography.com/wp-content/uploads/2013/01/IMG_0650-225x150.jpg" class="attachment-thumbnail wp-post-image" alt="Cohen Wicker"></a>
-            </span>
-        </div>
-    </div>
-    <div class="col-1-4 masonry-brick">
-        <div class="module-no-pad">
-            <span class="lightbox-gallery">
-                <a href="http://brewcheephotography.com/wp-content/uploads/2013/01/crop-2811.jpg" rel="lightbox[gallery]"><img width="225" height="150" src="http://brewcheephotography.com/wp-content/uploads/2013/01/crop-2811-225x150.jpg" class="attachment-thumbnail wp-post-image" alt="Kissing Booth"></a>
-            </span>
-        </div>
-    </div>
-    <div class="col-1-4 masonry-brick">
-        <div class="module-no-pad">
-            <span class="lightbox-gallery">
-                <a href="http://brewcheephotography.com/wp-content/uploads/2013/04/IMG_5884.jpg" rel="lightbox[gallery]"><img width="225" height="337" src="http://brewcheephotography.com/wp-content/uploads/2013/04/IMG_5884-225x337.jpg" class="attachment-thumbnail wp-post-image" alt="Hungry 6"></a>
-            </span>
-        </div>
-    </div>
-</div>
 
-<script src="assets/javascripts/masonry.p.js" type="text/javascript"></script>
-<script type="text/javascript">
-    jQuery('.mason-gallery').masonry({
-        itemSelector: '.col-1-4',
-        columnWidth: 0,
-        gutterWidth: 0
-    });
-</script>
 
- -->
