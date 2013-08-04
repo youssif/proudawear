@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130802201545) do
+ActiveRecord::Schema.define(:version => 20130731213140) do
 
   create_table "posts", :force => true do |t|
     t.string   "picture"
@@ -60,10 +60,10 @@ ActiveRecord::Schema.define(:version => 20130802201545) do
 
   create_table "votes", :force => true do |t|
     t.string   "user_id"
-    t.integer  "post_id",    :limit => 255
+    t.string   "post_id"
     t.boolean  "rating"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
