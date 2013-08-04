@@ -3,6 +3,9 @@ class Vote < ActiveRecord::Base
   belongs_to :user
   belongs_to :post
 
-  validates :user_id, :uniqueness => true
-
+  # validates_uniqueness_of :user_id, :scope => [:post_id]
+  #validates :user_id, :uniqueness => true
+#make sure to changes validates, the validates makes it 
+#validate against all votes
+  
 end

@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates_presence_of :name
   has_many :reviews
   has_many :posts
-  has_many :votes
+  has_one :votes
 
   def self.create_with_omniauth(auth)
     create! do |user|

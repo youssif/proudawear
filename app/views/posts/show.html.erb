@@ -23,6 +23,28 @@
 </p>
 
 
+<div class = "vote_percent">
+  <% if @post.upvote_counter > @post.downvote_counter %>
+    <div "vote_count">
+    <h3 class = "wear?"> WEAR IT! </h3>
+    <b class="percent_label">Wear Rating: </b>
+    <p class="percent"><%= "#{@post.upvote_percent}%" %></p>
+  <% else %>
+    <h3 class = "wear?"> FAUX PAS! </h3>
+    <b class="percent_label">Wear Rating: </b>
+    <p class="percent"><%= "#{@post.downvote_percent}%" %></p>
+  <% end %>
+
+</div>
+
+
+
+<%= render 'votes/formdownvote' %>
+<%= render 'votes/formupvote' %>
+
+
+
+
 <% if current_user && current_user.name != @post.name %>
   <%= render 'reviews/formr' %>
 <% end %>
@@ -41,7 +63,6 @@
     </div>
   <% end %>
 </div>
-
 
 <% if @post.previous_post %>
   <%= link_to 'Previous post', @post.previous_post %>
