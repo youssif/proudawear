@@ -41,6 +41,7 @@ GEM
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
+    chunky_png (1.2.8)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -50,6 +51,12 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     columnize (0.3.6)
+    compass (0.12.2)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+    compass-rails (1.0.3)
+      compass (>= 0.12.2, < 0.14)
     debug_inspector (0.0.2)
     debugger (1.6.1)
       columnize (>= 0.3.1)
@@ -71,6 +78,7 @@ GEM
     foreman (0.63.0)
       dotenv (>= 0.7)
       thor (>= 0.13.6)
+    fssm (0.2.10)
     hashie (2.0.5)
     hike (1.2.3)
     httpauth (0.2.0)
@@ -161,7 +169,7 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.1)
       rack (>= 1.0)
-    zurb-foundation (4.3.1)
+    zurb-foundation (4.0.9)
       sass (>= 3.2.0)
 
 PLATFORMS
@@ -172,6 +180,7 @@ DEPENDENCIES
   binding_of_caller
   carrierwave
   coffee-rails (~> 3.2.1)
+  compass-rails
   debugger
   devise
   foreman
@@ -186,4 +195,4 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
-  zurb-foundation
+  zurb-foundation (~> 4.0.0)

@@ -1,80 +1,99 @@
 <p id="notice"><%= notice %></p>
+<div class = "container">
+  <center>
+    <div class = "post_card">
+      <h2 class = "title">
+        <%= @post.title %>
+      </h2>
 
-<p>
-  <b>Outfit:</b>
+      <h4 class = "description">
+        <%= @post.description %>
+      </h4>
 
-   <% if @post.picture.present? %>
-        <%= image_tag @post.picture, width: '80' %>
-    <% else %>
-    <p>N/A</p>
-    <% end %>
-</p>
+      <% if @post.previous_post %>
+        <div class = "previous">
+          <%= link_to 'Previous post', @post.previous_post %>
+        </div>
+      <% end %>
 
-<h3><%=@post.name%></h3>
+      <p>
+         <% if @post.picture.present? %>
+              <%= image_tag @post.picture, width: '80' %>
+          <% else %>
+          <p>N/A</p>
+          <% end %>
+      </p>
 
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
+      <% if @post.next_post %>
+        <div class = "next">
+          <%= link_to 'Next post', @post.next_post %>
+        </div>
+      <% end %>
 
-<p>
-  <b>Description:</b>
-  <%= @post.description %>
-</p>
-
-
-<!-- Shows percentage of upvotes -->
-<%if @post.total_votes > 0 %>
-  <div class = "vote_percent">
-    <% if @post.upvote_counter > @post.downvote_counter %>
-      <div "vote_count">
-      <h3 class = "wear?"> WEAR IT! </h3>
-      <b class="percent_label">Wear Rating: </b>
-      <p class="percent"><%= "#{@post.upvote_percent}%" %></p>
-    <% else %>
-      <h3 class = "wear?"> FAUX PAS! </h3>
-      <b class="percent_label">Wear Rating: </b>
-      <p class="percent"><%= "#{@post.downvote_percent}%" %></p>
-    <% end %>
-
-  </div>
-<% end %>
-
-
-<!-- Don't want users voting on their own posts -->
-<% unless @post.name == current_user.name %>
-  <%= render 'votes/formdownvote' %>
-  <%= render 'votes/formupvote' %>
-<% end %>
-
-
-
-
-<% if current_user && current_user.name != @post.name %>
-  <%= render 'reviews/formr' %>
-<% end %>
-
-<div class = "review_container">
-  <% @reviews.each do |review| %>  
-    <div class = "name">
-      <%= image_tag review.picture, width: '40' %>
-      <span><%= review.name %></span>
-        
+      <p class = "username">Posted by <%=@post.name%></p>
     </div>
+  </center>
 
-    <div class = "review_body">
-      <b>Advice:</b>
-      <%= review.review %>
-    </div>
+
+  <center>
+    <!-- Shows percentage of upvotes -->
+    <%if @post.total_votes > 0 %>
+      <div class = "vote_percent">
+        <% if @post.upvote_counter > @post.downvote_counter %>
+          <h3 class = "wear?"> WEAR IT! </h3>
+          <b class="percent_label">Wear Rating: </b>
+          <p class="percent"><%= "#{@post.upvote_percent}%" %></p>
+        <% else %>
+          <h3 class = "wear?"> FAUX PAS! </h3>
+          <b class="percent_label">Wear Rating: </b>
+          <p class="percent"><%= "#{@post.downvote_percent}%" %></p>
+        <% end %>
+
+      </div>
+    <% end %>
+  </center>
+
+
+  <!-- Don't want users voting on their own posts -->
+  <% unless @post.name == current_user.name %>
+    <center>
+      <div class = "vote_card">
+        <%= render 'votes/formdownvote' %>
+        <%= render 'votes/formupvote' %>
+      </div>
+    </center>
   <% end %>
+
+
+
+
+  <% if current_user && current_user.name != @post.name %>
+    <center>
+      <div class = "submit_review">
+        <%= render 'reviews/formr' %>
+      </div>
+    </center>
+  <% end %>
+
+  <center>
+    <div class = "review_container">
+      <% @reviews.each do |review| %>  
+        <div class = "each_review">
+          <div class = "name">
+            <%= image_tag review.picture, width: '40' %>
+            <span><%= review.name %></span>
+              
+          </div>
+
+          <div class = "review_body">
+            <b>Advice:</b>
+            <%= review.review %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </center>
 </div>
 
-<% if @post.previous_post %>
-  <%= link_to 'Previous post', @post.previous_post %>
-<% end %>
-
-<% if @post.next_post %>
-  <%= link_to 'Next post', @post.next_post %>
-<% end %>
 
 
