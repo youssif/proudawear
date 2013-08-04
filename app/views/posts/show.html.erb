@@ -23,24 +23,29 @@
 </p>
 
 
-<div class = "vote_percent">
-  <% if @post.upvote_counter > @post.downvote_counter %>
-    <div "vote_count">
-    <h3 class = "wear?"> WEAR IT! </h3>
-    <b class="percent_label">Wear Rating: </b>
-    <p class="percent"><%= "#{@post.upvote_percent}%" %></p>
-  <% else %>
-    <h3 class = "wear?"> FAUX PAS! </h3>
-    <b class="percent_label">Wear Rating: </b>
-    <p class="percent"><%= "#{@post.downvote_percent}%" %></p>
-  <% end %>
+<!-- Shows percentage of upvotes -->
+<%if @post.total_votes > 0 %>
+  <div class = "vote_percent">
+    <% if @post.upvote_counter > @post.downvote_counter %>
+      <div "vote_count">
+      <h3 class = "wear?"> WEAR IT! </h3>
+      <b class="percent_label">Wear Rating: </b>
+      <p class="percent"><%= "#{@post.upvote_percent}%" %></p>
+    <% else %>
+      <h3 class = "wear?"> FAUX PAS! </h3>
+      <b class="percent_label">Wear Rating: </b>
+      <p class="percent"><%= "#{@post.downvote_percent}%" %></p>
+    <% end %>
 
-</div>
+  </div>
+<% end %>
 
 
-
-<%= render 'votes/formdownvote' %>
-<%= render 'votes/formupvote' %>
+<!-- Don't want users voting on their own posts -->
+<% unless @post.name == current_user.name %>
+  <%= render 'votes/formdownvote' %>
+  <%= render 'votes/formupvote' %>
+<% end %>
 
 
 

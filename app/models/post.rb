@@ -33,8 +33,33 @@ class Post < ActiveRecord::Base
   end
 
   def downvote_percent
-    ((self.downvote_counter.to_f/self.total_votes.to_f)*100).to_i
+    ((self.upvote_counter.to_f/self.total_votes.to_f)*100).to_i
   end
+
+  def downvote_check(user)
+    #search to see if current user has already made a downvote
+    if self.votes.where(rating: false, user_id: user)
+      destroy_votes = self.votes.where(user_id: user)
+      destroy_votes.each do |vote|
+        vote.destroy
+      end
+    end
+  end
+
+  def upvote_check(user)
+    #search to see if current user has already made an upvote
+    if self.votes.where(rating: true, user_id: user)
+      destroy_votes = self.votes.where(user_id: user)
+      destroy_votes.each do |vote|
+        vote.destroy
+      end
+    end
+  end
+
+  # def voted?
+  #   if current_user.id = self.votes.id
+
+  # end
 
 
 
