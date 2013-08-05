@@ -10,6 +10,7 @@ group :development do
   gem 'sqlite3'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'rspec-rails', '~> 2.0'
 end
 
 group :production do
