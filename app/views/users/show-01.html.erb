@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<% if current_user == @user %>
+	<h1> Post History </h1>
+
+
+	
+
+	<div class="table">
+	<table>
+	  <tr>
+	    <th>Picture</th>
+	    <th>Title</th>
+	    <th>Description</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+	<br>
+
+	<% Post.all.each do |post| %>  
+		<% if post.name == @user.name && @user.name == current_user.name %>
+		  <tr>    
+		    <% if post.picture.present? %>
+		        <td><%= image_tag post.picture, width: '60'%></td>
+		    <% else %>
+		        <td>N/A</td>
+		    <% end %>
+		    <td><%= post.title %></td>
+		    <td><%= post.description %></td>
+		    <td><%= link_to 'Show', post %></td>
+		    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+		    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		  </tr>
+		<% end %>
+	<% end %>
+	</table>
+	</div>
+
+	<%= link_to 'Home', posts_path %>
+<% else %>
+	<p> You must be logged in as this user to view profile </p>
+<% end %>
+
+<!-- Taken from posts/index view-->
+
+
+
