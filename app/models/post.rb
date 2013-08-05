@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :reviews
   validates :picture, presence: true
-  has_many :votes
+  has_many :votes, dependent: :destroy
 
   def next_post
     @next_post = Post.find(:first, :conditions => ["id > ?", self.id])
@@ -54,6 +54,18 @@ class Post < ActiveRecord::Base
         vote.destroy
       end
     end
+  end
+
+  def upvote!(user)
+    self.downvote_check(user.id)
+    self.votes.create(user: user, rating: true)
+    save
+  end
+
+  def downvote!(user)
+    self.upvote_check(user.id)
+    self.votes.create(user: user, rating: false)
+    save
   end
 
   # def voted?

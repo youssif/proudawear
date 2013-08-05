@@ -86,17 +86,14 @@ class PostsController < ApplicationController
 
   def upvote
     @post = Post.find(params[:id])
-    @post.downvote_check(current_user.id)
-    @vote =Vote.create(user_id: current_user.id, post_id: params[:id], rating: true)
-    @vote.save
+    @post.upvote!(current_user)
+
     redirect_to :back
   end
 
   def downvote
     @post = Post.find(params[:id])
-    @post.upvote_check(current_user.id)
-    @vote =Vote.create(user_id: current_user.id, post_id: params[:id], rating: false)
-    @vote.save
+    @post.downvote!(current_user)
     redirect_to :back
   end
 end

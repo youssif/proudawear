@@ -13,6 +13,12 @@ group :development do
   gem 'rspec-rails', '~> 2.0'
 end
 
+group :development, :test do
+  gem 'pry'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+
 group :production do
   gem 'pg'
 end
@@ -35,9 +41,6 @@ group :assets do
   gem 'compass-rails' # you need this or you get an err
   gem 'zurb-foundation', '~> 4.0.0'
 end
-
-gem 'better_errors'
-gem 'binding_of_caller'
 
 gem 'foreman'
 gem 'devise'
