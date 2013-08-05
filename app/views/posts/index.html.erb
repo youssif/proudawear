@@ -6,8 +6,9 @@
 	<div class = "upload_post">
 		<%= link_to 'Fashion help!', new_post_path %>
 	</div>
+
 	  <% @posts.each do |post| %>
-	    <div class= "box item photo centered">
+	    <div class= "box_item_photo_centered">
 	      <%= link_to image_tag(post.picture_url), post %>
 	    </div>
 	  <% end %>

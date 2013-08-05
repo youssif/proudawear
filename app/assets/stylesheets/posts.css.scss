@@ -18,13 +18,19 @@ div#container {
   margin-bottom: 0px;
   float: left;
 }
+.box_item_photo_centered {
+	float:left;
+	padding: 20px;
+}
 
 .photos .photo img {
   display: block;
   width: 100%;
 }
 
-
+.upload_post {
+	float:left;
+}
 
 // .js-masonry .infinite-scroll .clearfix .centered { height: 10000px;
 // }
