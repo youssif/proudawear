@@ -21,3 +21,6 @@
 //= require masonry/box-maker
 //= require masonry/jquery.loremimages.min
 
+.title-area{
+	width: 13em;
+}

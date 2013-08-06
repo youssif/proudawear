@@ -55,13 +55,15 @@
 
 
   <!-- Don't want users voting on their own posts -->
-  <% unless @post.name == current_user.name %>
-    <center>
-      <div class = "vote_card">
-        <%= render 'votes/formdownvote' %>
-        <%= render 'votes/formupvote' %>
-      </div>
-    </center>
+  <% if current_user %>
+    <% unless @post.name == current_user.name %>
+      <center>
+        <div class = "vote_card">
+          <%= render 'votes/formdownvote' %>
+          <%= render 'votes/formupvote' %>
+        </div>
+      </center>
+    <% end %>
   <% end %>
 
 
