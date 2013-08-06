@@ -7,12 +7,8 @@
 // http://masonry.desandro.com/masonry.pkgd.js added as external resource
 
 $(document).ready(function() {
-  var $container = $('#container');
-  $container.imagesLoaded( function() {
-      $container.masonry({
-      	animate: true,
-      	itemSelector: '.item'
-      });
+  
+ 
   });
 });
 
