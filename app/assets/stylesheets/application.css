@@ -21,6 +21,7 @@
 
 
 
+/*Navigation Bar*/
  nav.top-bar.menu-icon{
  	padding-bottom: 4em;
  	height: 4em;
@@ -59,6 +60,18 @@ a.proudawear{
 	font-size: 250%;
 }
 
+/*Navigation Bar Done*/
+
+.below_nav{
+	float: left;
+	position: relative;
+	width: 100%;
+	height: 4em;
+}
+
+#container{
+	margin-top: 7em;
+}
 
 
 
