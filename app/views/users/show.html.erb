@@ -11,8 +11,8 @@
       <% if post.name == @user.name && @user.name == current_user.name %>
         <div class= "box item photo centered">
           <%= link_to image_tag(post.picture_url), post %>
-          <%= post.title %>
-          <%= post.description %>
+          <p class="img-text"><%= post.title %></p>
+          <p class="img-text" id="descr"><%= post.description %></p>
         </div>
       <% end %>
     <% end %>

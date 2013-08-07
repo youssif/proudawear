@@ -6,11 +6,11 @@
 
 // http://masonry.desandro.com/masonry.pkgd.js added as external resource
 
-$(document).ready(function() {
+// $(document).ready(function() {
   
  
-  });
-});
+//   });
+// });
 
 // setInterval(function() {
 // 	$('#container').width()
