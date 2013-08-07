@@ -4,20 +4,18 @@
  -->
 
 <head>
-  <!-- Latest version of jQuery -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+	<meta charset = "utf-8" />
+  <!-- Set the viewport width to device width for mobile -->
+
   
 <!--   Set the viewport width to device width for mobile
  -->  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!--   >Includes all the js files assets/stylesheets</!
  -->
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-
-<!--   >Includes all the js files assets/javascripts</!
- -->  <%= javascript_include_tag "application" %>
-
-
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
 
 <!--   >The csrf_meta_tag inserts what is essentially a digitial signature into the page. It acts as a verification that the requests coming into the application server are from properly logged in users</!
  -->  <%= csrf_meta_tags %>
@@ -26,69 +24,62 @@
   
  <!-- <script src="http://masonry.desandro.com/masonry.pkgd.min.js"></script> -->
 
+
 </head>
 
 <body>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=186525764858317";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
 
 <header>
-	<div class = "contain-to-grid fixed sticky">
-		<nav class = "top-bar menu-icon">
-			<div class = "title_container">
-			<ul class = "title-area">
-					<li>
-					<%= link_to 'proudawear', posts_path, class: 'proudawear' %>
-					</li>
+	<div class="fixed sticky">
+		<nav class="top-bar" data-options="is_hover:false">
+			<ul class="title-area">
+				<li class="name">
+				<h3><%= link_to 'proudawear', posts_path, class: 'proudawear' %></h3>
+				</li>
+				<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 			</ul>
-			</div>
-					
-					<% if current_user %>
-						<div class = "facebook">
+			<section class="top-bar-section">
+				
+				<% if current_user %>
+					<ul class="right logged_in">	
+						<li>
+							<%= image_tag current_user.image, width: '30', class: "user_photo" %> 
+						</li>
+						<li class = "has-dropdown">
+							<%= link_to "Logged in as #{current_user.name}", '#', class: "user_name" %>
 
-							<ul class = "right">	
-								<li class = "right">
-									<%= image_tag current_user.image, width: '30' %> <span><%="Logged in as " %><%= link_to "#{current_user.name}", current_user %> </span>
-									<span><%= link_to 'Logout', signout_path, :class => 'view_logout' %> </span>
+							<ul class = "dropdown">
+								<li><%= link_to 'Previous Posts', current_user %>
+								</li>
+								<li>
+									<%= link_to 'Logout', signout_path, :class => 'view_logout' %>
 								</li>
 							</ul>
-						</div>
+						</li>
 
-					<% else %>
-						<div class = "facebook">
-							<ul class = "right">
-									<li class = "right">
-									<%= link_to image_tag('Facebook_login.png', class:"facebook_login"), user_omniauth_authorize_path(:facebook) %>
-									</li>
-								
-							</ul>
-						</div>
+					</ul>
 
-					<% end %>
-		
-
-
+				<% else %>
+					<ul class="right login_ul">
+						<li>
+							<%= link_to image_tag('Facebook_login.png', class: "facebook_login"), user_omniauth_authorize_path(:facebook), class: "fb_login" %>			
+						</li>
+					</ul>
+				<% end %>
+			</section>
 		</nav>
 	</div>
 
 </header>
-	<p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-	<div class = "below_nav">
-		<div class = "upload_post">
-			<%= link_to 'Fashion help!', new_post_path %>
-		</div>
-	</div>
+
 
 <%= yield %>
 
+<footer> 
+	<div class = "upload_post">
+		<%= link_to 'Fashion help!', new_post_path %>
+	</div>
+</footer>
 
 
 </body>
