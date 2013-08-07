@@ -1,15 +1,18 @@
+<!-- Users show view a with masonry -->
 <p id="notice"><%= notice %></p>
 
+<!-- Checks that user is logged in -->
 <% if current_user == @user %>
 	<h1> Post History </h1>
-
-
+  <!-- Formats the images so they recenter when screen size changes (Code borrowed from 'posts/index' view) -->
   <div id="container" class= "js-masonry centered photos clearfix" data-masonry-options='{ "columnWidth": 0, "itemSelector": ".item", "gutter": 3 }'>
+    <!-- Displays only the current users posts -->
     <% Post.all.each do |post| %>  
       <% if post.name == @user.name && @user.name == current_user.name %>
-        <!-- User's Posts; code taken from 'posts/index' view-->
         <div class= "box item photo centered">
           <%= link_to image_tag(post.picture_url), post %>
+          <%= post.title %>
+          <%= post.description %>
         </div>
       <% end %>
     <% end %>
@@ -19,3 +22,5 @@
 <% else %>
 	<p> You must be logged in as this user to view profile </p>
 <% end %>
+
+
