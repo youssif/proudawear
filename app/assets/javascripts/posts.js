@@ -9,8 +9,8 @@
 $(document).ready(function() {
   
  
-  });
 });
+
 
 // setInterval(function() {
 // 	$('#container').width()

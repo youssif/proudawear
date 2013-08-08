@@ -85,7 +85,7 @@
 //
 
 // We use these to control header font styles
-// $header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+ $header-font-family: "michroma", "Helvetica", Helvetica, Arial, sans-serif;
 // $header-font-weight: bold;
 // $header-font-style: normal;
 // $header-font-color: #222;
@@ -988,9 +988,9 @@ $topbar-height: 5em;
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: #333;
-// $topbar-dropdown-link-color: #fff;
-// $topbar-dropdown-toggle-size: 5px;
-// $topbar-dropdown-toggle-color: #fff;
+$topbar-dropdown-link-color: #919191;
+$topbar-dropdown-toggle-size: 5px;
+$topbar-dropdown-toggle-color: #919191;
 // $topbar-dropdown-toggle-alpha: 0.5;
 // $dropdown-label-color: #555;
 
@@ -998,19 +998,19 @@ $topbar-height: 5em;
 // $topbar-menu-link-transform: uppercase;
 // $topbar-menu-link-font-size: emCalc(13px);
 // $topbar-menu-link-weight: bold;
-// $topbar-menu-link-color: #fff;
-// $topbar-menu-icon-color: #fff;
-// $topbar-menu-link-color-toggled: #888;
-// $topbar-menu-icon-color-toggled: #888;
+$topbar-menu-link-color: #919191;
+$topbar-menu-icon-color: #919191;
+$topbar-menu-link-color-toggled: #919191;
+$topbar-menu-icon-color-toggled: #919191;
 
 // Transitions and breakpoint styles
 // $topbar-transition-speed: 300ms;
 // $topbar-breakpoint: emCalc(940px); // Change to 9999px for always mobile layout
 // $topbar-media-query: "only screen and (min-width "#{$topbar-breakpoint}")";
 
-.topbar-section{
-	line-height: 0px;
-}
+// .topbar-section{
+// 	line-height: 0px;
+// }
 
 ul.logged_in{
 	background: none;	
@@ -1019,5 +1019,19 @@ ul.logged_in{
 a.logged_in{
 	margin-right: 10px;
 }
+
+a#proudawear:hover{
+	text-decoration: none;
+	background-color: none;
+}
+
+li.toggle-topbar.menu-icon#menu_dropdown{
+	margin-top: -26px;
+}
+
+h3.proudawear_title{
+	margin-top: 0.1em;
+}
+
 
 @import 'foundation';

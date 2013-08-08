@@ -19,10 +19,14 @@
 
 <!--   >The csrf_meta_tag inserts what is essentially a digitial signature into the page. It acts as a verification that the requests coming into the application server are from properly logged in users</!
  -->  <%= csrf_meta_tags %>
+<link href='http://fonts.googleapis.com/css?family=Michroma' rel='stylesheet' type='text/css'>
+
+
+
   
   <title>proudawear</title>
   
- <!-- <script src="http://masonry.desandro.com/masonry.pkgd.min.js"></script> -->
+<!--  // <script src="http://masonry.desandro.com/masonry.pkgd.min.js"></script> -->
 
 
 </head>
@@ -34,9 +38,9 @@
 		<nav class="top-bar" data-options="is_hover:false">
 			<ul class="title-area">
 				<li class="name">
-				<h3><%= link_to 'proudawear', posts_path, class: 'proudawear' %></h3>
+				<h3 class = "proudawear_title"><%= link_to 'proudawear', posts_path, id: 'proudawear' %></h3>
 				</li>
-				<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+				<li class="toggle-topbar menu-icon" id= "menu_dropdown"><a href="#"><span>Menu</span></a></li>
 			</ul>
 			<section class="top-bar-section">
 				
@@ -46,7 +50,7 @@
 							<%= image_tag current_user.image, width: '30', class: "user_photo" %> 
 						</li>
 						<li class = "has-dropdown">
-							<%= link_to "Logged in as #{current_user.name}", '#', class: "user_name" %>
+							<%= link_to "Logged in as #{current_user.name}", '#', id: "user_name" %>
 
 							<ul class = "dropdown">
 								<li><%= link_to 'Previous Posts', current_user %>
@@ -81,6 +85,7 @@
 	</div>
 </footer>
 
+	<%= javascript_include_tag "application" %>
 
 </body>
 </html>
