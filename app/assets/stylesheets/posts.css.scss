@@ -26,7 +26,8 @@ div#container {
 .photos .photo img {
   display: block;
   width: 100%;
-  border: 1px solid rgb(168, 198, 211);
+  border: 2px solid rgb(168, 198, 211);
+  border-radius: 2px;
   transition: border 0.2s ease-in-out;
   box-shadow: 0px 0px 10px rgb(168, 198, 211);
 
