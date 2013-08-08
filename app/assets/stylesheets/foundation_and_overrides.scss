@@ -971,8 +971,8 @@
 // $topbar-bg: #111;
 
 // Height and margin
-$topbar-height: 5em;
-// $topbar-margin-bottom: emCalc(30px);
+$topbar-height: 6em;
+$topbar-margin-bottom: emCalc(20px);
 
 // Control Input height for top bar
 // $topbar-input-height: 2.45em;
@@ -982,13 +982,13 @@ $topbar-height: 5em;
 // $topbar-title-font-size: emCalc(17px);
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: #fff;
+$topbar-link-color: rgb(168, 198, 211);
 // $topbar-link-weight: bold;
 // $topbar-link-font-size: emCalc(13px);
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: #333;
-$topbar-dropdown-link-color: #919191;
+$topbar-dropdown-link-color: rgb(168, 198, 211);
 $topbar-dropdown-toggle-size: 5px;
 $topbar-dropdown-toggle-color: #919191;
 // $topbar-dropdown-toggle-alpha: 0.5;
@@ -998,10 +998,10 @@ $topbar-dropdown-toggle-color: #919191;
 // $topbar-menu-link-transform: uppercase;
 // $topbar-menu-link-font-size: emCalc(13px);
 // $topbar-menu-link-weight: bold;
-$topbar-menu-link-color: #919191;
-$topbar-menu-icon-color: #919191;
-$topbar-menu-link-color-toggled: #919191;
-$topbar-menu-icon-color-toggled: #919191;
+$topbar-menu-link-color: rgb(168, 198, 211);
+$topbar-menu-icon-color: rgb(168, 198, 211);
+$topbar-menu-link-color-toggled: rgb(168, 198, 211);
+$topbar-menu-icon-color-toggled: rgb(168, 198, 211);
 
 // Transitions and breakpoint styles
 // $topbar-transition-speed: 300ms;
@@ -1018,6 +1018,10 @@ ul.logged_in{
 
 a.logged_in{
 	margin-right: 10px;
+}
+
+a#proudawear{
+	color: rgb(168, 198, 211);
 }
 
 a#proudawear:hover{

@@ -2,12 +2,17 @@
 
 <center>
 <div id="container" class= "js-masonry centered photos clearfix" data-masonry-options='{ "columnWidth": 0, "itemSelector": ".item", "gutter": 3 }'>
-
-	  <% @posts.each do |post| %>
-	    <div class= "box item photo centered">
-	      <%= link_to image_tag(post.picture_url), post %>
-	    </div>
-	  <% end %>
+	<center>
+		<div id = "posts_container">
+		  <% @posts.each do |post| %>
+		    <center>
+		    <div class= "box item photo centered">
+		      <%= link_to image_tag(post.picture_url), post %>
+		    </div>
+			</center>
+		  <% end %>
+		 </div>
+	</center>
 </div>
 <center>
 
