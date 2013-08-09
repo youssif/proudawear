@@ -10,15 +10,8 @@
       </ul>
     </div>
   <% end %> 
-
   <div class="field">
-    <p><%= current_user.name %></p><br />
-  </div>
-  <div class="field">
-    <%= image_tag current_user.image, width: '80' %>
-  </div>
-  <div class="field">
-    <%= f.label :review %><br />
+    <%= f.label 'Fashion advice:' %><br />
     <%= f.text_area :review %>
   </div>
   <div class="actions">
