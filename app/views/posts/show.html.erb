@@ -1,74 +1,93 @@
 <p id="notice"><%= notice %></p>
 <div class = "container">
-  <center>
-    <div class = "post_card">
-      <h2 class = "title">
-        <%= @post.title %>
-      </h2>
-
-      <h4 class = "description">
-        <%= @post.description %>
-      </h4>
-
-      <% if @post.previous_post %>
-        <div class = "previous">
-          <%= link_to 'Previous post', @post.previous_post %>
-        </div>
-      <% end %>
-
-      <p>
-         <% if @post.picture.present? %>
-              <%= image_tag @post.picture, width: '80' %>
-          <% else %>
-          <p>N/A</p>
-          <% end %>
-      </p>
-
-      <% if @post.next_post %>
-        <div class = "next">
-          <%= link_to 'Next post', @post.next_post %>
-        </div>
-      <% end %>
-
-      <p class = "username">Posted by <%=@post.name%></p>
-    </div>
-  </center>
-
-
-  <center>
-    <!-- Shows percentage of upvotes -->
-    <%if @post.total_votes > 0 %>
-      <div class = "vote_percent">
-        <% if @post.upvote_counter > @post.downvote_counter %>
-          <h3 class = "wear?"> WEAR IT! </h3>
-          <b class="percent_label">Wear Rating: </b>
-          <p class="percent"><%= "#{@post.upvote_percent}%" %></p>
-        <% else %>
-          <h3 class = "wear?"> FAUX PAS! </h3>
-          <b class="percent_label">Wear Rating: </b>
-          <p class="percent"><%= "#{@post.downvote_percent}%" %></p>
-        <% end %>
-      </div>
-    <% end %>
-  </center>
-
-
-  <!-- Don't want users voting on their own posts -->
-  <% if current_user %>
-    <% unless @post.name == current_user.name %>
+  <div class='row'>
+    <div class='large-12 columns' id='vote_wrapper'>
       <center>
-        <div class = "vote_card">
-          <%= render 'votes/formdownvote' %>
-          <%= render 'votes/formupvote' %>
+        <div class='small-1 columns'>
+          <% if @post.previous_post %>
+            <%= link_to image_tag('previous_arrow.png', width:'30', class:'previous'), @post.previous_post %>               
+          <% end %>
         </div>
+        <center>
+        <div class="large-12 columns" id="vote_container">
+          <center>
+            <div class='large-12 columns' id='votes'>  
+              <center>
+                
+                <div class="post_card">
+                  
+                  <h2 class="title">
+                    <%= @post.title %>
+                  </h2>
+                  <p class="description">
+                    <%= @post.description %>
+                  </p>
+                  <hr class='title_break' />                  
+                  <center>
+                    <div class='large-12 columns' id="post_photo">
+                      <% if @post.picture.present? %>
+                        <%= image_tag @post.picture, width: '80', id:'user_post' %>
+                      <% else %>
+                        <p>N/A</p>
+                      <% end %>
+                    </div>
+                  </center>
+                    <p class="username">Posted by <%=@post.name%></p>
+                </div>
+              </center>
+
+
+              <center>
+                <!-- Shows percentage of upvotes -->
+                <%if @post.total_votes > 0 %>
+                  <div class = "vote_percent">
+                    <% if @post.upvote_counter > @post.downvote_counter %>
+                      <h3 class = "wear?"> WEAR IT! </h3>
+                      <b class="percent_label">Wear Rating: </b>
+                      <p class="percent"><%= "#{@post.upvote_percent}%" %></p>
+                    <% else %>
+                      <h3 class = "wear?"> FAUX PAS! </h3>
+                      <b class="percent_label">Wear Rating: </b>
+                      <p class="percent"><%= "#{@post.downvote_percent}%" %></p>
+                    <% end %>
+                  </div>
+                <% end %>
+              </center>
+
+
+              <!-- Don't want users voting on their own posts -->
+              <% if current_user %>
+                <% unless @post.name == current_user.name %>
+                  <center>
+                    <div class = "vote_card">
+                      <%= render 'votes/formdownvote' %>
+                      <%= render 'votes/formupvote' %>
+                    </div>
+                  </center>
+                <% end %>
+              <% end %>
+            </div>
+          </center>
+        
+        </div>
+        </center>
+        <div class='small-1 columns'>
+          <% if @post.next_post %>               
+            <%= link_to image_tag('next_arrow.png', width:'30', class:'next'), @post.next_post %>
+          <% end %>
+        </div>
+
       </center>
-    <% end %>
-  <% end %>
+    </div>
+  </div>
+
 
 <!-- ******** END Vote Card ********* -->
+  <center>
+  <div class="comments_container">  
     <div class="row">
       <div class="large-12 columns">
-        <div class="panel">
+        <div class="panel reviews_title">
           <h1><%=@reviews.count %> Total Reviews for <%= @post.name %>'s Post</h1>
         </div>
         <!-- ********* Number of reviews here *******-->
@@ -82,8 +101,8 @@
             <!-- This is source ordered to be pulled to the left on larger screens -->
             <% if current_user && current_user.name != @post.name %>
               <center>
-                <div class="large-4 columns ">
-                  <div class="panel">
+                <div class="large-3 columns">
+                  <div class="panel" id="review_postcard">
                     <!-- Link to plus image tag for current_user -->
                     <%= image_tag current_user.image, width: '80' %>
              <!--        Link to current_user name -->
@@ -106,17 +125,17 @@
                 <!-- Feed Entry -->
               <div class = "comment-container">  
                 <div class="row">
-                  <div class="large-12 columns panel">
+                  <div class="large-13 columns panel">
                     <% @reviews.each do |review| %>
                       <div class="row">
                         <div class="large-2 columns small-3"><center><%= image_tag review.picture, width: '40' %><p><strong><%= review.name %></strong></p></center></div>
         <!--********* Reviewer who posted something ***** -->
-                        <div class="large-10 columns">
+                        <div class="large-10 columns" id:"review">
         <!-- ********* Review Text here ************* -->
-                          <p><%= review.review %></p>
+                          <p id='review'><%= review.review %></p>
                         </div>
                       </div>
-                      <hr />
+                      
                     <% end %>
                   </div>
                 </div>
@@ -131,18 +150,18 @@
       <div class="row">
             <!-- Main Feed -->
             <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
-            <div class="large-14 columns">
+            <div class="large-12 columns">
                 <!-- Feed Entry -->
               <div class = "comment-container">  
                 <div class="row">
-                  <div class="large-14 columns panel">
+                  <div class="large-12 columns panel">
                     <% @reviews.each do |review| %>
                       <div class="row">
                         <div class="large-2 columns small-3"><center><%= image_tag review.picture, width: '40' %><p><strong><%= review.name %></strong></p></center></div>
         <!--********* Reviewer who posted something ***** -->
-                        <div class="large-10 columns">
+                        <div class="large-10 columns" id: 'review'>
         <!-- ********* Review Text here ************* -->
-                          <p><%= review.review %></p>
+                          <p id='review'><%= review.review %></p>
                         </div>
                       </div>
                       <hr />
@@ -157,6 +176,8 @@
       </center>
 
     <%end%>
+  </div>
+  </center>
 </div>
 
 

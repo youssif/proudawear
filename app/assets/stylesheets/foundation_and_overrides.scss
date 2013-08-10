@@ -17,7 +17,7 @@
 // We use these to control various global styles
 // $body-bg: #fff;
 // $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-family: "Source Sans Pro", "Source Sans Pro", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -85,10 +85,10 @@
 //
 
 // We use these to control header font styles
- $header-font-family: "Michroma", "Helvetica", Helvetica, Arial, sans-serif;
+ $header-font-family: "Source Sans Pro", "Source Sans Pro", Helvetica, Arial, sans-serif;
 // $header-font-weight: bold;
 // $header-font-style: normal;
-// $header-font-color: #222;
+$header-font-color: black;
 // $header-line-height: 1.4;
 // $header-top-margin: .2em;
 // $header-bottom-margin: .5em;
@@ -114,7 +114,7 @@
 // $small-font-color: lighten($header-font-color, 30%);
 
 // We use these to style paragraphs
-// $paragraph-font-family: inherit;
+$paragraph-font-family: Source Sans Pro;
 // $paragraph-font-weight: normal;
 // $paragraph-font-size: 1em;
 // $paragraph-line-height: 1.6;
@@ -134,9 +134,9 @@
 // $anchor-font-color-hover: darken($primary-color, 5%);
 
 // We use these to style the <hr> element
-// $hr-border-width: 1px;
+$hr-border-width: 1px;
 // $hr-border-style: solid;
-// $hr-border-color: #ddd;
+$hr-border-color: black;
 // $hr-margin: emCalc(20px);
 
 // We use these to style lists
@@ -245,7 +245,7 @@
 // $button-margin-bottom: emCalc(20px);
 
 // We use these to control button text styles.
-// $button-font-family: inherit;
+ $button-font-family: Source Sans Pro;
 // $button-font-color: #fff;
 // $button-font-color-alt: #333;
 // $button-font-med: emCalc(16px);
@@ -1022,6 +1022,7 @@ a.logged_in{
 
 a#proudawear{
 	color: rgb(168, 198, 211);
+	font-family: michroma;
 }
 
 a#proudawear:hover{
