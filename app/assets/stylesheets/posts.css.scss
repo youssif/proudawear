@@ -53,34 +53,55 @@ div#container {
   margin-top: 0.7em;
 }
 
+p.user_name{
+  position: left;
+  display: inline-block;
+  clear: both;
+  margin-top: -1.2em;
+}
 
 // ************* Posts show view
 
 // ************* Posts Votes *******************
 
+.info_container{
+  background: rgba(17, 16, 16, 0.52);
+  margin-bottom: 1.5em;
+  box-shadow: 0px 2px 15px black;
+  max-height: 10em;
+}
+
+  div#post_description{
+    margin-top: 1.5em;
+  }
+
+  #post_title{
+    margin-top: 0em;
+  }
 
 #vote_container{
-  width: 80%;
-  margin-bottom: 3em;
+  margin-bottom: 1.5em;
   margin-top: 0em;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  padding-right: 2em; 
+  padding-left: 2em;
   border-radius: 24px;
   background: rgba(235, 230, 230, 0.52);
   box-shadow: 0px 0px 5px #464343;
   display: inline-block;
+  width: 65%;
+
 }
   
 #vote_wrapper{
   margin-top: 2em;
 }
 
-.post_card{
-  margin-top: 1em;
-}
-
-hr.title_break{
+hr#title_break{
   width: 66%;
+  border-color: rgba(69, 25, 180, 0.36);
+  box-shadow: rgb(128, 23, 94);
 }
 
 p.description{
@@ -91,6 +112,7 @@ img.previous{
   width: 300% fixed;
   height: 100%;
   margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 img.next{
@@ -100,16 +122,46 @@ img.next{
 }
 
 #post_photo{
+  background: rgba(228, 218, 218, 0.67);
+  border-radius: 14px;
+  box-shadow: 0px 0px 3px #464343;
+  padding-top: 1em;
+}
+
+h3#post_title{
+  font-size: 2.5em;
+}
+
+p#post_username{
+  margin-top: -1.2em;
 }
 
 img#user_post{
-  width: 62%;
+  width: auto;
   box-shadow: 0px 0px 5px #464343;
   border-radius: 4px;
+  max-height: 40em;
 }
 
 .large-10.columns#votes{
   margin: 2px solid red;
+}
+
+.vote_card.large-2.columns{
+}
+
+input.button.downvoting{
+  width: 100%;
+  max-width: 8em;
+  min-height: 2em;
+}
+
+input.button.upvoting{
+  width: 100%;
+  max-width: 8em;
+  min-height: 2em;
+  margin-top: 1em;
+  margin-bottom: 0em;
 }
 
 
@@ -133,14 +185,8 @@ img#user_post{
   opacity: 0.9;
   box-shadow: 0px 0px 3px #464343;
   margin: 1em;
-  background: #fcfdff; /* Old browsers */
-  background: -moz-linear-gradient(-45deg,  #fcfdff 0%, #f9e5f9 100%, #a1dbff 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#fcfdff), color-stop(100%,#f9e5f9), color-stop(100%,#a1dbff)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(-45deg,  #fcfdff 0%,#f9e5f9 100%,#a1dbff 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(-45deg,  #fcfdff 0%,#f9e5f9 100%,#a1dbff 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(-45deg,  #fcfdff 0%,#f9e5f9 100%,#a1dbff 100%); /* IE10+ */
-  background: linear-gradient(135deg,  #fcfdff 0%,#f9e5f9 100%,#a1dbff 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfdff', endColorstr='#a1dbff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background: rgba(235, 235, 235, 0.52);
+  border: none;
 
 }
 
@@ -150,7 +196,9 @@ img#user_post{
   }
 
   .row hr{
-    color: blue;
+    border-color: rgba(16, 16, 95, 0.23);
+    box-shadow: 0px 0px 20px gray;
+    width: 50%;
   }
 
   .panel.reviews_title{
