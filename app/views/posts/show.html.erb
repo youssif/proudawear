@@ -11,43 +11,47 @@
           <p>     </p>
         <% end %>
       </div>
-      <div class='large-10 columns'>
-        <div class="row">
-          <center>
-          <div class="large-8 columns" id="title">
-            <div class='row'>
-            <div class='large-8 columns' id="post_description">
-            </div>
-            </div>
-          </div>
-          </center>
-          <div class='large-2 columns'>
-            <center>
-            <!-- Shows percentage of upvotes -->
-              <%if @post.total_votes > 0 %>
-                <div class="vote_percent">
-                  <% if @post.upvote_counter > @post.downvote_counter %>
-                    <h3 class = "wear?"> WEAR IT! </h3>
-                    <b class="percent_label">Wear Rating: </b>
+      <center>
+      <div class="row">
+        <div class='large-8 columns title_head'>
+          <!-- Shows percentage of upvotes -->
+            <%if @post.total_votes > 0 %>
+              <center>
+              <div class="vote_percent">
+                <% if @post.upvote_counter > @post.downvote_counter %>
+                  <div class='large-4 columns'>
+                    <%= image_tag('mannequin-unchecked.png', class:'wear') %>
+                  </div>
+                  <div class='large-5 columns' id='verdict'>
+                    <h3 class="wear">WEAR </h3>
+                    <b class="percent_label">Proudarating: </b>
                     <p class="percent"><%= "#{@post.upvote_percent}%" %></p>
-                  <% else %>
-                    <h3 class = "wear?"> FAUX PAS! </h3>
-                    <b class="percent_label">Wear Rating: </b>
+                  </div>
+                <% else %>
+                  <div class='large-4 columns'>
+                    <%= image_tag('mannequin-uncrossed.png', class:'faux') %>
+                  </div>
+                  <div class='large-5 columns' id='verdict'>
+                    <h3 class="faux">FAUX PAS </h3>
+                    <b class="percent_label">Proudarating: </b>
                     <p class="percent"><%= "#{@post.downvote_percent}%" %></p>
-                  <% end %>
-                </div>
-              <% end %>
-            </center>
-          </div>
+                  </div>
+                <% end %>
+              </div>
+              </center>
+            <% end %>
+        </div>
+        <div class='small-1 columns right_arrow'>
+          <% if @post.next_post %>               
+            <%= link_to image_tag('next_arrow.png', width:'30', class:'next'), @post.next_post %>
+          <% else %>
+            <p>     </p>
+          <% end %>
         </div>
       </div>
-      <div class='small-1 columns'>
-        <% if @post.next_post %>               
-          <%= link_to image_tag('next_arrow.png', width:'30', class:'next'), @post.next_post %>
-        <% else %>
-          <p>     </p>
-        <% end %>
-      </div>
+      </center>
+      
+      
     </div>
   </div>
 </center>
@@ -141,12 +145,16 @@
   <center>
   <div class="comments_container">  
     <div class="row">
+      <center>
       <div class="large-12 columns">
+        <center>
         <div class="panel reviews_title">
           <h1><%=@reviews.count %> Total Reviews for <%= @post.name %>'s Post</h1>
         </div>
+        </center>
         <!-- ********* Number of reviews here *******-->
       </div>
+      </center>
     </div>
     <!-- End Header and Nav -->
     <% if current_user && current_user.name != @post.name %>
@@ -156,7 +164,7 @@
             <!-- This is source ordered to be pulled to the left on larger screens -->
             <% if current_user && current_user.name != @post.name %>
               <center>
-                <div class="large-3 columns">
+                <div class="large-4 columns">
                   <div class="panel" id="review_postcard">
                     <!-- Link to plus image tag for current_user -->
                     <%= image_tag current_user.image, width: '80' %>
@@ -180,19 +188,20 @@
                 <!-- Feed Entry -->
               <div class = "comment-container">  
                 <div class="row">
-                  <div class="large-13 columns panel">
+                  <div class="large-12 columns panel">
                     <% @reviews.each do |review| %>
                       <div class="row">
-                        <div class="large-2 columns small-3"><center><%= image_tag review.picture, width: '40' %><p><strong><%= review.name %></strong></p></center></div>
+                        <center><div class="large-4 columns small-3"><center><%= image_tag review.picture, width: '40' %><p><strong><%= review.name %></strong></p></center></div></center>
         <!--********* Reviewer who posted something ***** -->
-                        <div class="large-10 columns" id:"review">
+                        <div class="large-8 columns" id:"review">
         <!-- ********* Review Text here ************* -->
                           <p id='review'><%= review.review %></p>
                         </div>
                       </div>
-                      
+                      <hr id='review_hr' />
                     <% end %>
                   </div>
+
                 </div>
               </div>
               <!-- End Feed Entry -->
@@ -212,9 +221,11 @@
                   <div class="large-12 columns panel">
                     <% @reviews.each do |review| %>
                       <div class="row">
-                        <div class="large-2 columns small-3"><center><%= image_tag review.picture, width: '40' %><p><strong><%= review.name %></strong></p></center></div>
+                        <center>
+                        <div class="large-4 columns small-3"><center><%= image_tag review.picture, width: '40' %><p><strong><%= review.name %></strong></p></center></div>
+                        </center>
         <!--********* Reviewer who posted something ***** -->
-                        <div class="large-10 columns" id: 'review'>
+                        <div class="large-8 columns" id: 'review'>
         <!-- ********* Review Text here ************* -->
                           <p id='review'><%= review.review %></p>
                         </div>

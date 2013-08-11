@@ -15,6 +15,8 @@ div#container {
 // .item { width: 28%;
 // }
 
+
+
 .photos .photo {
   width: 29%;
   margin: 0.9em;
@@ -68,7 +70,64 @@ p.user_name{
   background: rgba(17, 16, 16, 0.52);
   margin-bottom: 1.5em;
   box-shadow: 0px 2px 15px black;
-  max-height: 10em;
+  max-height: 8.7em;
+  margin-top: -1.3em;
+}
+
+  #verdict{
+    float: left;
+    color: lightgray;
+  }
+
+  .wear{
+    color: rgb(112, 197, 112);
+    margin-bottom: 0em;
+  }
+
+  .faux{
+    color: rgb(224, 129, 129);
+    margin-bottom: 0em;
+  }
+
+  img.wear{
+    float: right;
+    border: 3px solid;
+    border-radius: 3px;
+    width: 34%;
+    margin-bottom: 1.5em;
+    box-shadow: 0px 0px 20px;
+  }
+
+  h3.wear{
+    margin-top: -0.05em;
+  }
+
+  h3.faux{
+    margin-top: -0.05em;
+  }
+
+  img.faux{
+    float: right;
+    border: 3px solid;
+    border-radius: 3px;
+    width: 34%;
+    margin-bottom: 1.5em;
+    box-shadow: 0px 0px 20px;
+  }
+
+  .percent{
+    font-size: 22px;
+    margin-top: 2px;
+    font-style: bold;
+  }
+
+.vote_percent{
+  margin-top: 1.5em;
+}
+
+.large-8.columns.title_head{
+  margin-left: 13%;
+  margin-bottom: 1.5em;
 }
 
   div#post_description{
@@ -79,12 +138,16 @@ p.user_name{
     margin-top: 0em;
   }
 
+  .small-1.columns.right_arrow{
+    margin-right: 0.6em;
+  }
+
 #vote_container{
   margin-bottom: 1.5em;
   margin-top: 0em;
-  padding-top: 3em;
-  padding-bottom: 3em;
-  padding-right: 2em; 
+  padding-top: 2em;
+  padding-bottom: 2em;
+  padding-right: 1em; 
   padding-left: 2em;
   border-radius: 24px;
   background: rgba(235, 230, 230, 0.52);
@@ -105,7 +168,8 @@ hr#title_break{
 }
 
 p.description{
-  font-size: 20px;
+  font-size: 16px;
+  padding-bottom: 1em;
 }
 
 img.previous{
@@ -143,8 +207,8 @@ img#user_post{
   max-height: 40em;
 }
 
-.large-10.columns#votes{
-  margin: 2px solid red;
+.large-12.columns#votes{
+  padding-left: 0;
 }
 
 .vote_card.large-2.columns{
@@ -154,7 +218,15 @@ input.button.downvoting{
   width: 100%;
   max-width: 8em;
   min-height: 2em;
+  background-color: #4A3385;
+  border-color: #D1D0D1;
 }
+
+input.button.downvoting:hover{
+  background-color: navy;
+  border-color: lightblue;
+}
+
 
 input.button.upvoting{
   width: 100%;
@@ -162,20 +234,38 @@ input.button.upvoting{
   min-height: 2em;
   margin-top: 1em;
   margin-bottom: 0em;
+  background-color: #4A3385;
+  border-color: #D1D0D1;
 }
 
+input.button.upvoting:hover{
+  background-color: navy;
+  border-color: lightblue;
+}
+
+.small.button{
+  background-color: #4A3385;
+  border-color: #D1D0D1;
+}
+
+.small.button:hover{
+  background-color: navy;
+  border-color: lightblue;
+}
 
 // ************ Posts Reviews ******************
 .large-12.columns.panel{
   width: 97%;
+  padding-right: 1em;
 }
 
 .comments_container{
-  width: 85%;
+  width: 57%;
   // background: rgba(32, 30, 30, 0.6);
   border-radius: 24px;
   padding-top: 2em;
   padding-bottom: 2em;
+  padding-right: 2em;
   background: rgba(235, 230, 230, 0.52);
   box-shadow: 0px 0px 5px #464343;
 }
@@ -202,7 +292,7 @@ input.button.upvoting{
   }
 
   .panel.reviews_title{
-    width: 92%;
+    width: 100%;
   }
 
   .large-11.columns.panel{
@@ -210,20 +300,25 @@ input.button.upvoting{
   }
 
 .panel#review_postcard{
-  margin-left: 2.3em;
   width: 95%;
 }
 
 .large-13.columns.panel{
-  margin-left: 1.8em;
 }
 
 p#review{
-  margin-left: 15px;
-  padding-left: 10px;
+  margin-left: 0px;
+  padding-left: 0px;
   margin-top: 5px;
   max-width: 100%;
   overflow: scroll;
+  float: left;
+}
+
+hr#review_hr{
+  width: 90%;
+  box-shadow: 0px 0px 0px;
+  margin-bottom: 1em;
 }
 
 // ******** End posts reviews
