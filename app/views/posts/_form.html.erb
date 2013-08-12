@@ -1,3 +1,4 @@
+<center>
 <%= form_for @post, :html => {multipart: true} do |f| %> 
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -10,21 +11,24 @@
       </ul>
     </div>
   <% end %>
-
-
-  <div class="field">
-    <%= f.label :picture %><br />
-    <%= f.file_field :picture %>
+  <center>
+  <h1 class='new_post_title'> New Post </h1>
+  <div class="field panel">
+    <%= f.label 'Upload Photo (Required)', class:'title' %><br />
+    <center><%= f.file_field :picture, class:'upload_photo' %></center>
   </div>
-  <div class="field">
-    <%= f.label :title %><br />
+  <div class="field panel">
+    <%= f.label 'Title (Optional)', class:'title' %><br />
     <%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br />
+  <div class="field panel">
+    <%= f.label 'Description (Optional)', class:'title' %><br />
     <%= f.text_area :description %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= link_to 'Back', posts_path, class:'button form' %>
+    <%= f.submit 'Get Advice', class:'button form' %>
   </div>
+  </center>
 <% end %>
+</center>
