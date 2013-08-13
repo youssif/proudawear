@@ -2,7 +2,62 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Log-in Page banner
+.large-4.columns.title_head{
+  height: 100%;
+}
+
 h1 { text-align: center;
+  font-weight: normal;
+}
+
+h3.fashion_help1{
+  color: #DAF3FF;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+h3.fashion_help2{
+  color: #DAF3FF;
+  font-weight: normal;
+  margin-bottom: 0;
+
+}
+
+h2.fashion_help3{
+  color: #DAF3FF;
+  margin-bottom: 0;
+  line-height: 30px;
+  margin-top: 15px;
+
+}
+
+h2.fashion_help_sub{
+  color: #DAF3FF;
+  margin-bottom: 0;
+  line-height: 30px;
+  margin-top: 0px;
+
+}
+
+h6.fashiondesc{
+  color: #DAF3FF;
+  font-weight: normal;
+
+}
+
+// End login page banner
+
+.info_container.home_page{
+  background: rgba(17, 16, 16, 0.52);
+  margin-bottom: 1.5em;
+  box-shadow: 0px 3px 15px black;
+  height: 8.7em;
+  // margin-top: -1.3em;
+  width: 100%;
+  margin-top: 1.5em;
+  padding-bottom: 1em;
+  padding-top: 0.3em;
 }
 
 div#container {
@@ -28,18 +83,17 @@ div#container {
 .photos .photo img {
   display: block;
   width: 100%;
-  border: 2px solid rgb(168, 198, 211);
   border-radius: 2px;
   transition: border 0.2s ease-in-out;
-  box-shadow: 0px 0px 10px rgb(168, 198, 211);
+  box-shadow: 0px 0px 10px #274653;
 
 }
 
 .photos .photo img:hover {
   display: block;
   width: 100%;
-  border: 4px solid rgb(168, 198, 211);
-  transition: border 0.2s ease-in-out;
+  box-shadow: 0px 0px 10px whitesmoke;
+  transition: box-shadow 0.2s ease-in-out;
 
 }
 
@@ -52,7 +106,7 @@ div#container {
   height: 102%;
   position: absolute;
   margin-left: 0.5em;
-  margin-top: 0.7em;
+  margin-top: -1.8em;
 }
 
 p.user_name{
@@ -62,6 +116,21 @@ p.user_name{
   margin-top: -1.2em;
 }
 
+h2.fashion_help{
+  color: #DAF3FF;
+  margin-top: 0.6em;
+  margin-bottom: -0.1em;
+  font-weight: normal;
+
+
+}
+
+h4.help_desc{
+  color: #DAF3FF;
+  font-weight: normal;
+
+}
+
 // ************* Posts show view
 
 // ************* Posts Votes *******************
@@ -69,24 +138,25 @@ p.user_name{
 .info_container{
   background: rgba(17, 16, 16, 0.52);
   margin-bottom: 1.5em;
-  box-shadow: 0px 2px 15px black;
-  max-height: 8.7em;
-  margin-top: -1.3em;
+  box-shadow: 0px 3px 15px black;
+  max-height: 8.6em;
+  margin-top: 0.4em;
   width: 100%;
 }
 
   #verdict{
     float: left;
-    color: lightgray;
+    color: whitesmoke;
+    font-size: 14px;
   }
 
   .wear{
-    color: rgb(112, 197, 112);
+    color: #31E631;
     margin-bottom: 0em;
   }
 
   .faux{
-    color: rgb(224, 129, 129);
+    color: #FF8484;
     margin-bottom: 0em;
   }
 
@@ -193,7 +263,7 @@ img.next{
 #post_photo{
   background: rgba(137, 210, 233, 0.66);
   border-radius: 2px;
-  box-shadow: 0px 0px 3px #C0BBBB;
+  box-shadow: 0px 0px 3px #5870A3;
   padding-top: 2em;
   padding-left: 2em;
   padding-right: 2em;
@@ -231,12 +301,10 @@ input.button.downvoting{
   width: auto;
   max-width: 8em;
   height: 7em;
-  background-color: #23738B;
   margin-top: 2em;
 }
 
 input.button.downvoting:hover{
-  background-color: #1B6175;
 }
 
 
@@ -245,11 +313,9 @@ input.button.upvoting{
   width: auto;
   height: 7em;
   margin-top: 2em;
-  background-color: #23738B;
 }
 
 input.button.upvoting:hover{
-  background-color: #1B6175;
 }
 
 .small.button{
@@ -288,7 +354,7 @@ form.new_vote{
   opacity: 0.9;
   box-shadow: 0px 0px 3px #464343;
   margin: 1em;
-  background: rgba(137, 210, 233, 0.66);
+  background: rgba(155, 212, 230, 0.82);
   border: none;
 
 }

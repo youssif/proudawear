@@ -25,17 +25,31 @@
 @include sticky-footer(72px, "#layout", "#layout_footer", "#footer");
 
 body{
-	background: #0196c7; /* Old browsers */
-	background: -moz-linear-gradient(left,  #0196c7 0%, #4c01bd 31%, #5318b2 42%, #db5448 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#0196c7), color-stop(31%,#4c01bd), color-stop(42%,#5318b2), color-stop(100%,#db5448)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(left,  #0196c7 0%,#4c01bd 31%,#5318b2 42%,#db5448 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(left,  #0196c7 0%,#4c01bd 31%,#5318b2 42%,#db5448 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(left,  #0196c7 0%,#4c01bd 31%,#5318b2 42%,#db5448 100%); /* IE10+ */
-	background: linear-gradient(to right,  #0196c7 0%,#4c01bd 31%,#5318b2 42%,#db5448 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0196c7', endColorstr='#db5448',GradientType=1 ); /* IE6-9 */
+	// background: #0196c7; /* Old browsers */
+	// background: -moz-linear-gradient(left,  #0196c7 0%, #4c01bd 31%, #5318b2 42%, #db5448 100%); /* FF3.6+ */
+	// background: -webkit-gradient(linear, left top, right top, color-stop(0%,#0196c7), color-stop(31%,#4c01bd), color-stop(42%,#5318b2), color-stop(100%,#db5448)); /* Chrome,Safari4+ */
+	// background: -webkit-linear-gradient(left,  #0196c7 0%,#4c01bd 31%,#5318b2 42%,#db5448 100%);  Chrome10+,Safari5.1+ 
+	// background: -o-linear-gradient(left,  #0196c7 0%,#4c01bd 31%,#5318b2 42%,#db5448 100%); /* Opera 11.10+ */
+	// background: -ms-linear-gradient(left,  #0196c7 0%,#4c01bd 31%,#5318b2 42%,#db5448 100%); /* IE10+ */
+	// background: linear-gradient(to right,  #0196c7 0%,#4c01bd 31%,#5318b2 42%,#db5448 100%); /* W3C */
+	// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0196c7', endColorstr='#db5448',GradientType=1 ); /* IE6-9 */
+// background: #66aec6; /* Old browsers */
+// background: -moz-linear-gradient(left,  #66aec6 0%, #6770d3 31%, #6770d3 63%, #66aec6 100%); /* FF3.6+ */
+// background: -webkit-gradient(linear, left top, right top, color-stop(0%,#66aec6), color-stop(31%,#6770d3), color-stop(63%,#6770d3), color-stop(100%,#66aec6)); /* Chrome,Safari4+ */
+// background: -webkit-linear-gradient(left,  #66aec6 0%,#6770d3 31%,#6770d3 63%,#66aec6 100%);  Chrome10+,Safari5.1+ 
+// background: -o-linear-gradient(left,  #66aec6 0%,#6770d3 31%,#6770d3 63%,#66aec6 100%); /* Opera 11.10+ */
+// background: -ms-linear-gradient(left,  #66aec6 0%,#6770d3 31%,#6770d3 63%,#66aec6 100%); /* IE10+ */
+// background: linear-gradient(to right,  #66aec6 0%,#6770d3 31%,#6770d3 63%,#66aec6 100%); /* W3C */
+// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66aec6', endColorstr='#66aec6',GradientType=1 ); /* IE6-9 */
+	background: #c4def8 !important; /* Old browsers */
+	background: -moz-linear-gradient(left,  #c4def8 0%, #83bdef 47%, #83bdef 56%, #c4def8 100%) !important; /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#c4def8), color-stop(47%,#83bdef), color-stop(56%,#83bdef), color-stop(100%,#c4def8)) !important; /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #c4def8 0%,#83bdef 47%,#83bdef 56%,#c4def8 100%) !important; /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #c4def8 0%,#83bdef 47%,#83bdef 56%,#c4def8 100%) !important; /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #c4def8 0%,#83bdef 47%,#83bdef 56%,#c4def8 100%) !important; /* IE10+ */
+	background: linear-gradient(to right,  #c4def8 0%,#83bdef 47%,#83bdef 56%,#c4def8 100%) !important; /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c4def8', endColorstr='#c4def8',GradientType=1 ) !important; /* IE6-9 */
 	height: 2500px;
-
-
 }
 
 
@@ -51,6 +65,11 @@ body{
 	display: inline-block;
 	margin-bottom: -1.2em;
 	border-radius: 2px;
+	margin-top: 10px;
+ }
+
+ .facebook_login:hover{
+ 	opacity: 0.7;
  }
 
  .top-bar .title-area .name .proudawear_title a#proudawear:hover{
@@ -81,8 +100,7 @@ body{
  img.user_photo{
  	width: 3em;
 	margin-top: 0.8em;
-	border: 2px solid rgb(168, 198, 211);
-	border-radius: 1px 1px 1px;
+	border-radius: 2px;
  }
 
  .right.login_ul{
@@ -178,8 +196,6 @@ body{
 .button#mirror_button:hover{
 
 }
-	
-
 
 .mirror{
 	width: 3.5em;
