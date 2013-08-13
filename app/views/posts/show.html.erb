@@ -1,99 +1,254 @@
 <p id="notice"><%= notice %></p>
 <div class = "container">
   <center>
-    <div class = "post_card">
-      <h2 class = "title">
-        <%= @post.title %>
-      </h2>
-
-      <h4 class = "description">
-        <%= @post.description %>
-      </h4>
-
-      <% if @post.previous_post %>
-        <div class = "previous">
-          <%= link_to 'Previous post', @post.previous_post %>
-        </div>
-      <% end %>
-
-      <p>
-         <% if @post.picture.present? %>
-              <%= image_tag @post.picture, width: '80' %>
-          <% else %>
-          <p>N/A</p>
-          <% end %>
-      </p>
-
-      <% if @post.next_post %>
-        <div class = "next">
-          <%= link_to 'Next post', @post.next_post %>
-        </div>
-      <% end %>
-
-      <p class = "username">Posted by <%=@post.name%></p>
-    </div>
-  </center>
-
-
-  <center>
-    <!-- Shows percentage of upvotes -->
-    <%if @post.total_votes > 0 %>
-      <div class = "vote_percent">
-        <% if @post.upvote_counter > @post.downvote_counter %>
-          <h3 class = "wear?"> WEAR IT! </h3>
-          <b class="percent_label">Wear Rating: </b>
-          <p class="percent"><%= "#{@post.upvote_percent}%" %></p>
+  <div class='info_container'>
+    <div class='row'>
+        
+      <div class='small-1 columns'>
+        <% if @post.previous_post %>
+          <%= link_to image_tag('previous_arrow.png', width:'30', class:'previous'), @post.previous_post %>
         <% else %>
-          <h3 class = "wear?"> FAUX PAS! </h3>
-          <b class="percent_label">Wear Rating: </b>
-          <p class="percent"><%= "#{@post.downvote_percent}%" %></p>
+          <p>     </p>
         <% end %>
-
       </div>
-    <% end %>
-  </center>
-
-
-  <!-- Don't want users voting on their own posts -->
-  <% if current_user %>
-    <% unless @post.name == current_user.name %>
       <center>
-        <div class = "vote_card">
-          <%= render 'votes/formdownvote' %>
-          <%= render 'votes/formupvote' %>
+      <div class="row">
+        <div class='large-8 columns title_head'>
+          <!-- Shows percentage of upvotes -->
+            <%if @post.total_votes > 0 %>
+              <center>
+              <div class="vote_percent">
+                <% if @post.upvote_counter > @post.downvote_counter %>
+                  <div class='large-4 columns'>
+                    <%= image_tag('mannequin-unchecked.png', class:'wear') %>
+                  </div>
+                  <div class='large-5 columns' id='verdict'>
+                    <h3 class="wear">WEAR </h3>
+                    <b class="percent_label">Proudarating: </b>
+                    <p class="percent"><%= "#{@post.upvote_percent}%" %></p>
+                  </div>
+                <% else %>
+                  <div class='large-4 columns'>
+                    <%= image_tag('mannequin-uncrossed.png', class:'faux') %>
+                  </div>
+                  <div class='large-5 columns' id='verdict'>
+                    <h3 class="faux">FAUX PAS </h3>
+                    <b class="percent_label">Proudarating: </b>
+                    <p class="percent"><%= "#{@post.downvote_percent}%" %></p>
+                  </div>
+                <% end %>
+              </div>
+              </center>
+            <% end %>
         </div>
-      </center>
-    <% end %>
-  <% end %>
-
-
-
-
-  <% if current_user && current_user.name != @post.name %>
-    <center>
-      <div class = "submit_review">
-        <%= render 'reviews/formr' %>
+        <div class='small-1 columns right_arrow'>
+          <% if @post.next_post %>               
+            <%= link_to image_tag('next_arrow.png', width:'30', class:'next'), @post.next_post %>
+          <% else %>
+            <p>     </p>
+          <% end %>
+        </div>
       </div>
-    </center>
-  <% end %>
-
-  <center>
-    <div class = "review_container">
-      <% @reviews.each do |review| %>  
-        <div class = "each_review">
-          <div class = "name">
-            <%= image_tag review.picture, width: '40' %>
-            <span><%= review.name %></span>
-              
-          </div>
-
-          <div class = "review_body">
-            <b>Advice:</b>
-            <%= review.review %>
-          </div>
-        </div>
-      <% end %>
+      </center>
+      
+      
     </div>
+  </div>
+</center>
+  
+  <center>
+    <div class='row' id='vote_container'>
+      <center>
+      <div class='large-12 columns' id='votes'>  
+        <% if current_user %>
+          <% unless @post.name == current_user.name %>
+            <center>
+            <div class='large-12 columns' id="post_photo">
+              <h3 class="title" id="post_title">
+                <%= @post.title %>
+              </h3>
+              <p class="username" id="post_username">Posted by <%=@post.name%></p>
+              <hr />
+              <% if @post.picture.present? %>
+                <%= image_tag @post.picture, id:'user_post' %>
+                <hr />
+                <p class="description">
+                  <%= @post.description %>
+                </p>
+              <% else %>
+                <p>N/A</p>
+                <p class="description">
+                  <%= @post.description %>
+                </p>
+              <% end %>
+            </div>
+            </center>
+      
+            <center>
+              <div class="vote_card ">
+                <%= render 'votes/formupvote' %>
+                <%= render 'votes/formdownvote' %>
+              </div>
+            </center>
+          <% else %>
+            <center>
+            <div id="post_photo">
+              <h3 class="title" id="post_title">
+                <%= @post.title %>
+              </h3>
+              <p class="username" id="post_username">Posted by <%=@post.name%></p>
+              <hr />
+              <% if @post.picture.present? %>
+                <%= image_tag @post.picture, id:'user_post' %>
+                <hr />
+                <p class="description">
+                  <%= @post.description %>
+                </p>
+              <% else %>
+                <p>N/A</p>
+                <hr />
+              <% end %>
+            </div>
+            </center>
+          <% end %>
+        <% else %>
+          <center>
+          <div id="post_photo">
+            <h3 class="title" id="post_title">
+              <%= @post.title %>
+            </h3>
+            <p class="username" id="post_username">Posted by <%=@post.name%></p>
+            <hr />
+            <% if @post.picture.present? %>
+              <%= image_tag @post.picture, width: '80', id:'user_post' %>
+              <hr />
+              <p class="description">
+                <%= @post.description %>
+              </p>
+            <% else %>
+              <p>N/A</p>
+              <hr />
+              <p class="description">
+                <%= @post.description %>
+              </p>
+            <% end %>
+          </div>
+          </center>
+        <% end %>
+      </div>
+      </center>
+    </div>
+
+  </center>
+          
+          
+<!-- ******** END Vote Card ********* -->
+  <center>
+  <div class="comments_container">  
+    <div class="row">
+      <center>
+      <div class="large-12 columns">
+        <center>
+        <div class="panel reviews_title">
+          <h3><%=@reviews.count %> Total Reviews for <%= @post.name %>'s Post</h3>
+        </div>
+        </center>
+        <!-- ********* Number of reviews here *******-->
+      </div>
+      </center>
+    </div>
+    <!-- End Header and Nav -->
+    <% if current_user && current_user.name != @post.name %>
+      <center>
+      <div class="row">
+         <!-- Nav Sidebar -->
+            <!-- This is source ordered to be pulled to the left on larger screens -->
+            <% if current_user && current_user.name != @post.name %>
+              <center>
+                <div class="large-4 columns">
+                  <div class="panel" id="review_postcard">
+                    <!-- Link to plus image tag for current_user -->
+                    <%= image_tag current_user.image, width: '80' %>
+             <!--        Link to current_user name -->
+                    <h5><%= current_user.name %></h5>
+                      <center>
+                        <div class = "submit_review">
+                          <%= render 'reviews/formr' %>
+                        </div>
+                      </center>      
+                  </div>
+                </div>
+              </center>
+              
+            <% end %>
+
+
+            <!-- Main Feed -->
+            <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
+          <% if @reviews.count > 0 %>
+            <div class="large-8 columns">
+                <!-- Feed Entry -->
+              <div class = "comment-container">  
+                <div class="row">
+                  <div class="large-12 columns panel">
+                    <% @reviews.each do |review| %>
+                      <div class="row">
+                        <center><div class="large-4 columns small-3"><center><%= image_tag review.picture, width: '40' %><p><strong><%= review.name %></strong></p></center></div></center>
+        <!--********* Reviewer who posted something ***** -->
+                        <div class="large-8 columns" id:"review">
+        <!-- ********* Review Text here ************* -->
+                          <p id='review'><%= review.review %></p>
+                        </div>
+                      </div>
+                      <hr id='review_hr' />
+                    <% end %>
+                  </div>
+
+                </div>
+              </div>
+              <!-- End Feed Entry -->
+         
+            </div>
+          <% end %>
+        </div>
+        </center>
+    <% else %>
+      <% if @reviews.count > 0 %>
+
+      <center>
+      <div class="row">
+            <!-- Main Feed -->
+            <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
+            <div class="large-12 columns">
+                <!-- Feed Entry -->
+              <div class = "comment-container">  
+                <div class="row">
+                  <div class="large-12 columns panel">
+                    <% @reviews.each do |review| %>
+                      <div class="row">
+                        <center>
+                        <div class="large-4 columns small-3"><center><%= image_tag review.picture, width: '40' %><p><strong><%= review.name %></strong></p></center></div>
+                        </center>
+        <!--********* Reviewer who posted something ***** -->
+                        <div class="large-8 columns" id: 'review'>
+        <!-- ********* Review Text here ************* -->
+                          <p id='review'><%= review.review %></p>
+                        </div>
+                      </div>
+                      <hr />
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+              <!-- End Feed Entry -->
+         
+            </div>
+      </div>
+      </center>
+      <% end %>
+
+    <%end%>
+  </div>
   </center>
 </div>
 

@@ -17,7 +17,7 @@
 // We use these to control various global styles
 // $body-bg: #fff;
 // $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-family: "actor", "actor", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -85,10 +85,10 @@
 //
 
 // We use these to control header font styles
-// $header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+ $header-font-family: "actor", "actor", Helvetica, Arial, sans-serif;
 // $header-font-weight: bold;
 // $header-font-style: normal;
-// $header-font-color: #222;
+$header-font-color: black;
 // $header-line-height: 1.4;
 // $header-top-margin: .2em;
 // $header-bottom-margin: .5em;
@@ -114,7 +114,7 @@
 // $small-font-color: lighten($header-font-color, 30%);
 
 // We use these to style paragraphs
-// $paragraph-font-family: inherit;
+$paragraph-font-family: actor;
 // $paragraph-font-weight: normal;
 // $paragraph-font-size: 1em;
 // $paragraph-line-height: 1.6;
@@ -134,9 +134,9 @@
 // $anchor-font-color-hover: darken($primary-color, 5%);
 
 // We use these to style the <hr> element
-// $hr-border-width: 1px;
+$hr-border-width: 1px;
 // $hr-border-style: solid;
-// $hr-border-color: #ddd;
+$hr-border-color: black;
 // $hr-margin: emCalc(20px);
 
 // We use these to style lists
@@ -245,7 +245,7 @@
 // $button-margin-bottom: emCalc(20px);
 
 // We use these to control button text styles.
-// $button-font-family: inherit;
+ $button-font-family: actor;
 // $button-font-color: #fff;
 // $button-font-color-alt: #333;
 // $button-font-med: emCalc(16px);
@@ -274,7 +274,7 @@
 //
 
 // We use these to set the color of the pip in dropdown buttons
-// $dropdown-button-pip-color: #fff;
+ $dropdown-button-pip-color: #a8c6d3;
 // $dropdown-button-pip-color-alt: #333;
 
 // We use these to style tiny dropdown buttons
@@ -683,8 +683,8 @@
 // $panel-padding: emCalc(20px);
 
 // We use these to set default font colors
-// $panel-font-color: #333;
-// $panel-font-color-alt: #fff;
+$panel-font-color: black;
+$panel-font-color-alt: black;
 
 //
 // Pricing Table Variables
@@ -971,8 +971,8 @@
 // $topbar-bg: #111;
 
 // Height and margin
-$topbar-height: 5em;
-// $topbar-margin-bottom: emCalc(30px);
+$topbar-height: 7em;
+$topbar-margin-bottom: emCalc(10px);
 
 // Control Input height for top bar
 // $topbar-input-height: 2.45em;
@@ -982,15 +982,15 @@ $topbar-height: 5em;
 // $topbar-title-font-size: emCalc(17px);
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: #fff;
+$topbar-link-color: rgb(168, 198, 211);
 // $topbar-link-weight: bold;
 // $topbar-link-font-size: emCalc(13px);
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: #333;
-// $topbar-dropdown-link-color: #fff;
-// $topbar-dropdown-toggle-size: 5px;
-// $topbar-dropdown-toggle-color: #fff;
+$topbar-dropdown-link-color: rgb(168, 198, 211);
+$topbar-dropdown-toggle-size: 5px;
+$topbar-dropdown-toggle-color: #919191;
 // $topbar-dropdown-toggle-alpha: 0.5;
 // $dropdown-label-color: #555;
 
@@ -998,19 +998,19 @@ $topbar-height: 5em;
 // $topbar-menu-link-transform: uppercase;
 // $topbar-menu-link-font-size: emCalc(13px);
 // $topbar-menu-link-weight: bold;
-// $topbar-menu-link-color: #fff;
-// $topbar-menu-icon-color: #fff;
-// $topbar-menu-link-color-toggled: #888;
-// $topbar-menu-icon-color-toggled: #888;
+$topbar-menu-link-color: rgb(168, 198, 211);
+$topbar-menu-icon-color: rgb(168, 198, 211);
+$topbar-menu-link-color-toggled: rgb(168, 198, 211);
+$topbar-menu-icon-color-toggled: rgb(168, 198, 211);
 
 // Transitions and breakpoint styles
 // $topbar-transition-speed: 300ms;
 // $topbar-breakpoint: emCalc(940px); // Change to 9999px for always mobile layout
 // $topbar-media-query: "only screen and (min-width "#{$topbar-breakpoint}")";
 
-.topbar-section{
-	line-height: 0px;
-}
+// .topbar-section{
+// 	line-height: 0px;
+// }
 
 ul.logged_in{
 	background: none;	
@@ -1019,5 +1019,24 @@ ul.logged_in{
 a.logged_in{
 	margin-right: 10px;
 }
+
+a#proudawear{
+	color: rgb(168, 198, 211);
+	font-family: michroma;
+}
+
+a#proudawear:hover{
+	text-decoration: none;
+	background-color: none;
+}
+
+li.toggle-topbar.menu-icon#menu_dropdown{
+	margin-top: -26px;
+}
+
+h3.proudawear_title{
+	margin-left: 5%;
+}
+
 
 @import 'foundation';

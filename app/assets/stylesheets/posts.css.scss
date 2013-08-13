@@ -2,28 +2,461 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Log-in Page banner
+.large-4.columns.title_head{
+  height: 100%;
+}
+
 h1 { text-align: center;
+  font-weight: normal;
+}
+
+h3.fashion_help1{
+  color: #DAF3FF;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+h3.fashion_help2{
+  color: #DAF3FF;
+  font-weight: normal;
+  margin-bottom: 0;
+
+}
+
+h2.fashion_help3{
+  color: #DAF3FF;
+  margin-bottom: 0;
+  line-height: 30px;
+  margin-top: 15px;
+
+}
+
+h2.fashion_help_sub{
+  color: #DAF3FF;
+  margin-bottom: 0;
+  line-height: 30px;
+  margin-top: 0px;
+
+}
+
+h6.fashiondesc{
+  color: #DAF3FF;
+  font-weight: normal;
+
+}
+
+// End login page banner
+
+.info_container.home_page{
+  background: rgba(17, 16, 16, 0.52);
+  margin-bottom: 1.5em;
+  box-shadow: 0px 3px 15px black;
+  height: 8.7em;
+  // margin-top: -1.3em;
+  width: 100%;
+  margin-top: 1.5em;
+  padding-bottom: 1em;
+  padding-top: 0.3em;
 }
 
 div#container {
 	// min-width: 800px;
-	width: 107%;
+	width: 94%;
+  margin-top: 4em;
+  margin-left: 1.5em;
+  background: none;
 }
 // .item { width: 28%;
 // }
 
+
+
 .photos .photo {
-  width: 28%;
-  margin: 5px;
+  width: 29%;
+  margin: 0.9em;
   margin-bottom: 0px;
   float: left;
+  background: none;
 }
 
 .photos .photo img {
   display: block;
   width: 100%;
+  border-radius: 2px;
+  transition: border 0.2s ease-in-out;
+  box-shadow: 0px 0px 10px #274653;
+
 }
 
+.photos .photo img:hover {
+  display: block;
+  width: 100%;
+  box-shadow: 0px 0px 10px whitesmoke;
+  transition: box-shadow 0.2s ease-in-out;
+
+}
+
+.box.item.photo.centered{
+  
+}
+
+#posts_container{
+  width: 97%;
+  height: 102%;
+  position: absolute;
+  margin-left: 0.5em;
+  margin-top: -1.8em;
+}
+
+p.user_name{
+  position: left;
+  display: inline-block;
+  clear: both;
+  margin-top: -1.2em;
+}
+
+h2.fashion_help{
+  color: #DAF3FF;
+  margin-top: 0.6em;
+  margin-bottom: -0.1em;
+  font-weight: normal;
+
+
+}
+
+h4.help_desc{
+  color: #DAF3FF;
+  font-weight: normal;
+
+}
+
+// ************* Posts show view
+
+// ************* Posts Votes *******************
+
+.info_container{
+  background: rgba(17, 16, 16, 0.52);
+  margin-bottom: 1.5em;
+  box-shadow: 0px 3px 15px black;
+  max-height: 8.6em;
+  margin-top: 0.4em;
+  width: 100%;
+}
+
+  #verdict{
+    float: left;
+    color: whitesmoke;
+    font-size: 14px;
+  }
+
+  .wear{
+    color: #31E631;
+    margin-bottom: 0em;
+  }
+
+  .faux{
+    color: #FF8484;
+    margin-bottom: 0em;
+  }
+
+  img.wear{
+    float: right;
+    border: 3px solid;
+    border-radius: 3px;
+    width: 34%;
+    margin-bottom: 1.5em;
+    box-shadow: 0px 0px 20px;
+  }
+
+  h3.wear{
+    margin-top: -0.05em;
+  }
+
+  h3.faux{
+    margin-top: -0.05em;
+  }
+
+  img.faux{
+    float: right;
+    border: 3px solid;
+    border-radius: 3px;
+    width: 34%;
+    margin-bottom: 1.5em;
+    box-shadow: 0px 0px 20px;
+  }
+
+  .percent{
+    font-size: 22px;
+    margin-top: 2px;
+    font-style: bold;
+  }
+
+  b.pecent_label{
+    font-family: actor;
+  }
+
+.vote_percent{
+  margin-top: 1.5em;
+}
+
+.large-8.columns.title_head{
+  margin-left: 13%;
+  margin-bottom: 1.5em;
+}
+
+  div#post_description{
+    margin-top: 1.5em;
+  }
+
+  #post_title{
+    margin-top: 0em;
+  }
+
+  .small-1.columns.right_arrow{
+    margin-right: 0.6em;
+  }
+
+#vote_container{
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  padding-right: 2em; 
+  padding-left: 3em;
+  border-radius: 2px;
+  background: rgba(22, 21, 21, 0.52);
+  box-shadow: 0px 0px 5px #464343;
+  display: inline-block;
+  width: 65%;
+
+}
+  
+#vote_wrapper{
+  margin-top: 2em;
+}
+
+hr#title_break{
+  width: 66%;
+  border-color: rgba(69, 25, 180, 0.36);
+  box-shadow: rgb(128, 23, 94);
+}
+
+p.description{
+  font-size: 16px;
+  padding-bottom: 1em;
+}
+
+img.previous{
+  width: 300% fixed;
+  height: 100%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+img.next{
+  width: 300% fixed;
+  height: 100%;
+  margin-top: 2em;
+}
+
+#post_photo{
+  background: rgba(137, 210, 233, 0.66);
+  border-radius: 2px;
+  box-shadow: 0px 0px 3px #5870A3;
+  padding-top: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 2em;
+}
+
+h3#post_title{
+  font-size: 2.5em;
+  line-height: 27px;
+  margin-bottom: 21px;
+}
+
+p#post_username{
+  margin-top: -1.2em;
+}
+
+img#user_post{
+  width: 70%;
+  box-shadow: 0px 0px 5px #464343;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px #6B6BA3;
+  height: auto;
+  max-width: 25em;
+
+}
+
+.large-12.columns#votes{
+  padding-left: 0;
+}
+
+.vote_card.large-2.columns{
+}
+
+input.button.downvoting{
+  width: auto;
+  max-width: 8em;
+  height: 7em;
+  margin-top: 2em;
+}
+
+input.button.downvoting:hover{
+}
+
+
+input.button.upvoting{
+  width: 100%;
+  width: auto;
+  height: 7em;
+  margin-top: 2em;
+}
+
+input.button.upvoting:hover{
+}
+
+.small.button{
+  background-color: #23738B;
+  color: whitesmoke;
+}
+
+.small.button:hover{
+  background-color: #1B6175;
+}
+
+form.new_vote{
+  display: inline;
+}
+
+// ************ Posts Reviews ******************
+.large-12.columns.panel{
+  width: 97%;
+  padding-right: 1em;
+}
+
+.comments_container{
+  width: 65%;
+  // background: rgba(32, 30, 30, 0.6);
+  border-radius: 2px;
+  padding-top: 2.5em;
+  padding-bottom: 3em;
+  padding-right: 3em;
+  padding-left: 1.2em;
+  background: rgba(22, 21, 21, 0.52);
+  box-shadow: 0px 0px 5px #464343;
+}
+
+.panel{
+  border-radius: 2px;
+  opacity: 0.9;
+  box-shadow: 0px 0px 3px #464343;
+  margin: 1em;
+  background: rgba(155, 212, 230, 0.82);
+  border: none;
+
+}
+
+  .panel img{
+    box-shadow: 0px 0px 2px black;
+    border-radius: 4px;
+  }
+
+  .row hr{
+    border-color: rgba(16, 16, 95, 0.23);
+    box-shadow: 0px 0px 20px gray;
+    width: 50%;
+  }
+
+  .panel.reviews_title{
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .large-11.columns.panel{
+    width: 89.7%;
+  }
+
+.panel#review_postcard{
+  width: 95%;
+}
+
+.large-13.columns.panel{
+}
+
+p#review{
+  margin-left: 0px;
+  padding-left: 0px;
+  margin-top: 5px;
+  max-width: 100%;
+  overflow: scroll;
+  float: left;
+}
+
+hr#review_hr{
+  width: 90%;
+  box-shadow: 0px 0px 0px;
+  margin-bottom: 1em;
+}
+
+// ******** End posts reviews
+
+// ********* NEW POSTS **************
+
+#new_post{
+  margin-bottom: 1.5em;
+  margin-top: 2em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  padding-left: 3em;
+  padding-right: 3em;
+  border-radius: 2px;
+  background: rgba(22, 21, 21, 0.52);
+  box-shadow: 0px 0px 10px #464343;
+  width: 65%;
+}
+
+form.new_post{
+  border-radius: 2px;
+  opacity: 0.9;
+  box-shadow: 0px 0px 3px #464343;
+  margin: 1em;
+  background: rgba(137, 210, 233, 0.66);
+  border: none; 
+}
+
+h1.new_post_title{
+  color: #BED6E0;
+  font-size: 35px;
+}
+
+.field.panel{
+  box-shadow: 0px 0px 5px gray;
+}
+
+.button.form{
+  margin-top: 1em;
+  background-color: #23738B;
+  color: whitesmoke;
+}
+
+.button.form:hover{
+  background-color: #1B6175;
+
+}
+
+label.title{
+  font-size: 130%;
+  color: black;
+  font-family: actor;
+}
+
+.upload_photo#post_picture{
+  margin-left: 26%;
+}
 
 
 // .js-masonry .infinite-scroll .clearfix .centered { height: 10000px;
