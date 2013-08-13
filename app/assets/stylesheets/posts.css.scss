@@ -3,6 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // Log-in Page banner
+
+.large-12.columns#posts_container{
+  width: 100%;
+}
+
 .large-4.columns.title_head{
   height: 100%;
 }
@@ -102,10 +107,10 @@ div#container {
 }
 
 #posts_container{
-  width: 97%;
+  width: 100%;
   height: 102%;
   position: absolute;
-  margin-left: 0.5em;
+  margin-left: 2%;
   margin-top: -1.8em;
 }
 
@@ -333,8 +338,9 @@ form.new_vote{
 
 // ************ Posts Reviews ******************
 .large-12.columns.panel{
-  width: 97%;
+  width: 100%;
   padding-right: 1em;
+  margin-left: 0.5em;
 }
 
 .comments_container{
@@ -348,6 +354,11 @@ form.new_vote{
   background: rgba(22, 21, 21, 0.52);
   box-shadow: 0px 0px 5px #464343;
 }
+
+ .comment-container{
+  margin-left: 0.9em;
+  margin-right: -0.15em;
+ }
 
 .panel{
   border-radius: 2px;
@@ -389,7 +400,7 @@ form.new_vote{
 
 p#review{
   margin-left: 0px;
-  padding-left: 0px;
+  padding-left: 10%;
   margin-top: 5px;
   max-width: 100%;
   overflow: scroll;

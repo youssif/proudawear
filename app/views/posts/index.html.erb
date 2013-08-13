@@ -1,3 +1,5 @@
+
+
 <% unless current_user %>	
 	<div class='info_container home_page'>	
       <center>
@@ -26,7 +28,7 @@
 <% else %>
 	<div class='info_container home_page'>
       <center>
-	      <div class="row">
+	      <div class="row" index="page">
 	        <div class='large-12 columns title_head'>
 				<h2 class="fashion_help">Welcome to proudawear!</h2>  
 				<h4 class="help_desc">Click on a post below to get started.</h4>
@@ -36,20 +38,24 @@
 	</div>
 <% end %>
 
-
 <center>
-<div id="container" class="js-masonry centered photos clearfix" data-masonry-options='{ "columnWidth": 0, "itemSelector": ".item", "gutter": 3 }'>
-	<center>
-		<div id = "posts_container">
-		  <% @posts.sort.reverse.each do |post| %>
-		    <center>
-		    <div class= "box item photo centered">
-		      <%= link_to image_tag(post.picture_url), post %>
-		    </div>
+<div class="post_container_wrapper">
+	<div index="posts_container">
+		<center>
+		<div id="container" class="js-masonry centered photos clearfix" data-masonry-options='{ "columnWidth": 0, "itemSelector": ".item", "gutter": 3 }'>
+			<center>
+				<div id="posts_container">
+				  <% @posts.sort.reverse.each do |post| %>
+				    <center>
+				    <div class="box item photo centered">
+				      <%= link_to image_tag(post.picture_url), post %>
+				    </div>
+					</center>
+				  <% end %>
+				 </div>
 			</center>
-		  <% end %>
-		 </div>
-	</center>
+		</div>
+		<center>
+	</div>
 </div>
-<center>
-
+</center>

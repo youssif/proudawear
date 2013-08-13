@@ -145,6 +145,7 @@
 <!-- ******** END Vote Card ********* -->
   <center>
   <div class="comments_container">  
+    <center>
     <div class="row">
       <center>
       <div class="large-12 columns">
@@ -157,6 +158,7 @@
       </div>
       </center>
     </div>
+  </center>
     <!-- End Header and Nav -->
     <% if current_user && current_user.name != @post.name %>
       <center>
@@ -195,12 +197,14 @@
                       <div class="row">
                         <center><div class="large-4 columns small-3"><center><%= image_tag review.picture, width: '40' %><p><strong><%= review.name %></strong></p></center></div></center>
         <!--********* Reviewer who posted something ***** -->
-                        <div class="large-8 columns" id:"review">
+                        <div class="large-6 columns" id:"review">
         <!-- ********* Review Text here ************* -->
                           <p id='review'><%= review.review %></p>
                         </div>
                       </div>
+                      <center>
                       <hr id='review_hr' />
+                      </center>
                     <% end %>
                   </div>
 
@@ -227,12 +231,12 @@
                     <% @reviews.each do |review| %>
                       <div class="row">
                         <center>
-                        <div class="large-4 columns small-3"><center><%= image_tag review.picture, width: '40' %><p><strong><%= review.name %></strong></p></center></div>
+                        <div class="large-2 columns"><center><%= image_tag review.picture, width: '40' %><p><strong><%= review.name %></strong></p></center></div>
                         </center>
         <!--********* Reviewer who posted something ***** -->
                         <div class="large-8 columns" id: 'review'>
         <!-- ********* Review Text here ************* -->
-                          <p id='review'><%= review.review %></p>
+                          <center><p id='review'><%= review.review %></p></center>
                         </div>
                       </div>
                       <hr />
