@@ -15,8 +15,7 @@
 //     caption.height(image.height());
 //     caption.fadeOut();
 //   });
-// });
-
+// });git stat
 
 // ----- Clears the 'Edit' and "Delete id selectors" -----
   $('.edit').empty();
