@@ -1005,11 +1005,11 @@ $topbar-menu-icon-color-toggled: rgb(168, 198, 211);
 
 // Transitions and breakpoint styles
 // $topbar-transition-speed: 300ms;
-// $topbar-breakpoint: emCalc(940px); // Change to 9999px for always mobile layout
+$topbar-breakpoint: emCalc(0px); // Change to 9999px for always mobile layout
 // $topbar-media-query: "only screen and (min-width "#{$topbar-breakpoint}")";
 
 // .topbar-section{
-// 	line-height: 0px;
+// 	line-height: 200px;
 // }
 
 ul.logged_in{
@@ -1031,7 +1031,7 @@ a#proudawear:hover{
 }
 
 li.toggle-topbar.menu-icon#menu_dropdown{
-	margin-top: -26px;
+	margin-top: -2.5em;
 }
 
 h3.proudawear_title{

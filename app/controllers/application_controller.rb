@@ -12,4 +12,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
+#allows you to redirect back to the page you were trying to log in from
+  def after_sign_in_path_for(resource_or_scope)
+    if request.env['omniauth.origin']
+      request.env['omniauth.origin']
+    end
+  end
+
 end

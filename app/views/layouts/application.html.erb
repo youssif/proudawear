@@ -40,7 +40,7 @@
 				<li class="name">
 				<h3 class = "proudawear_title"><%= link_to 'proudawear', posts_path, id: 'proudawear' %></h3>
 				</li>
-				<li class="toggle-topbar menu-icon" id= "menu_dropdown"><a href="#" id="menu"><span>Menu</span></a></li>
+				<li class="toggle-topbar menu-icon" id= "menu_dropdown"><a href="#" id="menu"><span></span></a></li>
 <!-- 				Look up breakpoints for Foundation -->
 			</ul>
 			<section class="top-bar-section">
@@ -67,6 +67,7 @@
 				<% else %>
 					<ul class="right login_ul">
 						<li>
+							
 							<%= link_to image_tag('Facebook_login.png', class: "facebook_login"), user_omniauth_authorize_path(:facebook), id: "fb_login" %>			
 						</li>
 					</ul>

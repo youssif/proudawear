@@ -28,4 +28,15 @@
 $(function() {
   $(document).foundation();	
 });
+
+$(window).resize(function(){
+	if($(window).width()<550){
+		$('img.facebook_login').attr('src', 'assets/smallfb.png');
+		$('a#fb_login').css('width','5em').css('margin-top','-0.4em').css('margin-right','0em');
+	}
+	else{
+		$('img.facebook_login').attr('src', 'assets/Facebook_login.png');
+		$('a#fb_login').css('width','20em').css('margin-top','-0.1em').css('margin-right','-4em');
+	}
+})
   

@@ -2,9 +2,8 @@ class SessionsController < ApplicationController
   skip_before_filter :check_sign_in, :only => [:new, :create]
 
   def new
-    redirect_to '/auth/facebook'
     session[:return_to] ||= request.referer
-
+    redirect_to '/auth/facebook'
   end
 
   def create

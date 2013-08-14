@@ -6,10 +6,13 @@
 
 .large-12.columns#posts_container{
   width: 100%;
+  margin-left: 10%;
 }
 
-.large-4.columns.title_head{
+.small-4.columns.title_head{
   height: 100%;
+  font-size: 0.9em;
+  margin-top: 0.7em;
 }
 
 h1 { text-align: center;
@@ -62,7 +65,7 @@ h6.fashiondesc{
   height: 8.7em;
   // margin-top: -1.3em;
   width: 100%;
-  margin-top: 7.5em;
+  margin-top: 1.5em;
   padding-bottom: 1em;
   padding-top: 0em;
 }
@@ -145,15 +148,24 @@ h4.help_desc{
 
 // ************* Posts show view
 
+p#notice{
+  color: black;
+}
+
 // ************* Posts Votes *******************
 
 .info_container{
-  background: rgba(17, 16, 16, 0.52);
+  background: rgba(17, 16, 16, 0.8);
   margin-bottom: 1.5em;
   box-shadow: 0px 3px 15px black;
   max-height: 8.6em;
   margin-top: 7.5em;
   width: 100%;
+  z-index: 95;
+}
+
+.info_container.fixed{
+  padding-left: 8%;
 }
 
   #verdict{
@@ -182,11 +194,11 @@ h4.help_desc{
   }
 
   h3.wear{
-    margin-top: -0.05em;
+    margin-top: -0.25em;
   }
 
   h3.faux{
-    margin-top: -0.05em;
+    margin-top: -0.25em;
   }
 
   img.faux{
@@ -200,17 +212,27 @@ h4.help_desc{
 
   .percent{
     font-size: 22px;
-    margin-top: 2px;
+    margin-top: 4px;
     font-style: bold;
+    margin-bottom: 0em;
+    font-family: helvetica;
   }
 
-  b.pecent_label{
+  b.percent_label{
     font-family: actor;
+    font-size: 20px;
   }
 
 .vote_percent{
   margin-top: 1.5em;
 }
+  .vote_percent .small-5 .columns{
+    width: 49%;
+  }
+
+  .row .small-5{
+    width: 55.6%;
+  }
 
 .large-8.columns.title_head{
   margin-left: 13%;
@@ -221,12 +243,21 @@ h4.help_desc{
     margin-top: 1.5em;
   }
 
+  textarea#post_description{
+    width: 50%;
+  }
+
   #post_title{
     margin-top: 0em;
+    width: 50%;
   }
 
   .small-1.columns.right_arrow{
     margin-right: 0.6em;
+  }
+
+  .small-1.columns.left-arrow{
+    width: 8.6%;
   }
 
 #vote_container{
@@ -242,6 +273,11 @@ h4.help_desc{
   display: inline-block;
   width: 65%;
 
+}
+
+.vote_count{
+  font-size: 11px;
+  font-family: helvetica;
 }
   
 #vote_wrapper{
@@ -442,7 +478,8 @@ hr#review_hr{
   border-radius: 2px;
   background: rgba(22, 21, 21, 0.52);
   box-shadow: 0px 0px 10px #464343;
-  width: 65%;
+  width: 85%;
+  max-width: 50em;
 }
 
 form.new_post{
@@ -452,6 +489,8 @@ form.new_post{
   margin: 1em;
   background: rgba(137, 210, 233, 0.66);
   border: none; 
+  width: 85%;
+  max-width: 50em;
 }
 
 h1.new_post_title{
