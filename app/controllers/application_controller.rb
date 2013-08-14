@@ -4,7 +4,12 @@ class ApplicationController < ActionController::Base
 
 
   def correct_user?
-    User.find(params[:id]) == current_user
+    
+    if User.find(params[:id]) == current_user
+      return true
+    else
+      return false
+    end
   end
 
 end

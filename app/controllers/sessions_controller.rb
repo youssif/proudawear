@@ -3,11 +3,13 @@ class SessionsController < ApplicationController
 
   def new
     redirect_to '/auth/facebook'
+    session[:return_to] ||= request.referer
+
   end
 
   def create
-
     @user = User.find_for_facebook_oauth(request.env["omniauth.auth"], current_user)
+    redirect_to session[:return_to]
   end
 
 

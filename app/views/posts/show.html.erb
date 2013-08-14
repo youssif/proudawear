@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class = "container">
   <center>
-  <div class='info_container'>
+  <div class='info_container fixed'>
     <div class='row'>
         
       <div class='small-1 columns'>
@@ -53,6 +53,9 @@
       
       
     </div>
+  </div>
+  <div>
+    <p> </p>
   </div>
 </center>
   
@@ -150,8 +153,8 @@
       <center>
       <div class="large-12 columns">
         <center>
-        <div class="panel reviews_title">
-          <h3><%=@reviews.count %> Total Reviews for <%= @post.name %>'s Post</h3>
+        <div class="reviews_title">
+          <h3><%= pluralize(@reviews.count, 'Total Review') %> for <%= @post.name %>'s Post</h3>
         </div>
         </center>
         <!-- ********* Number of reviews here *******-->
@@ -168,6 +171,7 @@
             <% if current_user && current_user.name != @post.name %>
               <center>
                 <div class="large-4 columns">
+                  <center>
                   <div class="panel" id="review_postcard">
                     <!-- Link to plus image tag for current_user -->
                     <%= image_tag current_user.image, width: '80' %>
@@ -179,6 +183,7 @@
                         </div>
                       </center>      
                   </div>
+                  </center>
                 </div>
               </center>
               

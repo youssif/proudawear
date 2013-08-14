@@ -53,8 +53,8 @@
 						<li class = "has-dropdown">
 							<%= link_to "Logged in as #{current_user.name}", '#', id: "user_name" %>
 
-							<ul class = "dropdown">
-								<li><%= link_to 'My Previous Posts', current_user %>
+							<ul class="dropdown">
+								<li><%= link_to 'My Previous Posts', User.find(current_user.id) %>
 								</li>
 								<li>
 									<%= link_to 'Logout', signout_path, :class => 'view_logout' %>

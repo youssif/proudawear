@@ -24,8 +24,9 @@ class User < ActiveRecord::Base
   #Below tries to find an existing user by uid or create one with a random password otherwise.
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
 
-    unless @user
-      @user = User.create(name:auth.extra.raw_info.name,
+    @user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    return @user if @user
+    @user = User.create(name:auth.extra.raw_info.name,
                            provider:auth.provider,
                            uid:auth.uid,
                            nickname:auth.info.nickname,
@@ -34,16 +35,29 @@ class User < ActiveRecord::Base
                            # image: auth.info.secure_image_url,
                            password:Devise.friendly_token[0,20]
                            )
-    else 
-      @user = User.where(:provider => auth.provider, :uid => auth.uid).first
-    end
+
+
+    # ***** Code that was breaking before but sort of working, keeping just in case:
+    # unless @user
+    #   @user = User.create(name:auth.extra.raw_info.name,
+    #                        provider:auth.provider,
+    #                        uid:auth.uid,
+    #                        nickname:auth.info.nickname,
+    #                        image:auth.info.image,
+    #                        email:auth.info.email,
+    #                        # image: auth.info.secure_image_url,
+    #                        password:Devise.friendly_token[0,20]
+    #                        )
+    # else 
+    #   @user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    # end
 
     #add image
     # if auth.info.image.present?
     #   @user.update_attribute(:image, auth.info.image)
     # end
     
-    @user
+    return @user
   end
 
   def self.new_with_session(params, session)

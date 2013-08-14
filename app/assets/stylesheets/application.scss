@@ -50,6 +50,7 @@ body{
 	background: linear-gradient(to right,  #c4def8 0%,#83bdef 47%,#83bdef 56%,#c4def8 100%) !important; /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c4def8', endColorstr='#c4def8',GradientType=1 ) !important; /* IE6-9 */
 	height: 2500px;
+	padding-top: 0px;
 }
 
 
@@ -157,6 +158,12 @@ body{
 
  li#menu_dropdown{
  	top: 45%;
+ }
+
+ .view_logout{
+ 	position: fixed;
+ 	position: absolute;
+ 	float: left;
  }
 
 /*Navigation Bar Done*/
