@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
 
   #Below tries to find an existing user by uid or create one with a random password otherwise.
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
-
+    puts "OAUTH: #{auth}"
     @user = User.where(:provider => auth.provider, :uid => auth.uid).first
     return @user if @user
     @user = User.create(name:auth.extra.raw_info.name,

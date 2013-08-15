@@ -82,7 +82,9 @@
 <%= yield %>
 
 <div id="footer">
+	<% if current_user %>
 	<center><%= link_to image_tag('mirror.jpg', class: 'mirror'), new_post_path, class: "button", id:"mirror_button" %></center>
+	<% end %>
 
 </div>
 
