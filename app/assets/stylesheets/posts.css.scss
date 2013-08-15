@@ -166,6 +166,7 @@ p#notice{
 
 .info_container.fixed{
   padding-left: 8%;
+  padding-bottom: 1em;
 }
 
   #verdict{
@@ -232,7 +233,10 @@ p#notice{
 
   #verdict_none{
     margin-left: 24%;
+    margin-top: 0.5em;
     color: gray;
+    width: 62.6%;
+
   }
 
   p.percent.none{
@@ -314,12 +318,15 @@ img.previous{
   height: 100%;
   margin-top: 2em;
   margin-bottom: 2em;
+  min-height: 3.05em;
 }
 
 img.next{
   width: 300% fixed;
   height: 100%;
   margin-top: 2em;
+  margin-bottom: 2em;
+  min-height: 3em;
 }
 
 #post_photo{
