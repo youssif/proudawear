@@ -168,12 +168,15 @@ p#notice{
 .info_container.fixed{
   padding-left: 8%;
   padding-bottom: 1em;
+  height: 6em;
+  margin-top: 6em;
 }
 
   #verdict{
     float: left;
     color: whitesmoke;
     font-size: 14px;
+    margin-top: -0.2em;
   }
 
   .wear{
@@ -190,31 +193,33 @@ p#notice{
     float: right;
     border: 3px solid;
     border-radius: 3px;
-    width: 34%;
+    width: 2.5em;
     margin-bottom: 1.5em;
     box-shadow: 0px 0px 20px;
   }
 
   h3.wear{
-    margin-top: -0.25em;
+    margin-top: -0.5em;
+    font-size: 1.2em;
   }
 
   h3.faux{
-    margin-top: -0.25em;
+    margin-top: -0.5em;
+    font-size: 1.2em;
   }
 
   img.faux{
     float: right;
     border: 3px solid;
     border-radius: 3px;
-    width: 34%;
+    width: 2.5em;
     margin-bottom: 1.5em;
     box-shadow: 0px 0px 20px;
   }
 
   .percent{
-    font-size: 1.5em;
-    margin-top: 4px;
+    font-size: 1.1em;
+    margin-top: 0px;
     font-style: bold;
     margin-bottom: 0em;
     font-family: helvetica;
@@ -222,7 +227,7 @@ p#notice{
 
   b.percent_label{
     font-family: actor;
-    font-size: 20px;
+    font-size: 0.9em;
   }
 
 .vote_percent{
@@ -234,7 +239,7 @@ p#notice{
 
   #verdict_none{
     margin-left: 24%;
-    margin-top: 0.5em;
+    margin-top: 0.2em;
     color: gray;
     width: 62.6%;
 
@@ -245,9 +250,10 @@ p#notice{
   }
 
   h3.no_reviews{
-    font-size: 1.8em;
+    font-size: 1.2em;
     color: gray;
     margin-bottom: 0em;
+    margin-top: 0.7em;
   }
 
   .row .small-5{
@@ -282,7 +288,7 @@ p#notice{
 
 #vote_container{
   margin-bottom: 2.5em;
-  margin-top: 11.5em;
+  margin-top: 7.5em;
   padding-top: 3em;
   padding-bottom: 3em;
   padding-right: 2em; 
@@ -296,8 +302,9 @@ p#notice{
 }
 
 .vote_count{
-  font-size: 11px;
+  font-size: 10px;
   font-family: helvetica;
+  margin-top: -3px;
 }
   
 #vote_wrapper{
@@ -318,7 +325,7 @@ p.description{
 img.previous{
   width: 300% fixed;
   height: 100%;
-  margin-top: 2em;
+  margin-top: 1em;
   margin-bottom: 2em;
   min-height: 3.05em;
 }
@@ -326,7 +333,7 @@ img.previous{
 img.next{
   width: 300% fixed;
   height: 100%;
-  margin-top: 2em;
+  margin-top: 1em;
   margin-bottom: 2em;
   min-height: 3em;
 }
