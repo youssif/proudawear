@@ -50,6 +50,7 @@ gem 'koala', '~> 1.7.0rc1'
 gem 'jquery-rails'
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
+gem 'fog'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

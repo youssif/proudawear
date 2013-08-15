@@ -9,8 +9,8 @@ class PicturesUploader < CarrierWave::Uploader::Base
 
   # process :rotate
   # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
+  # storage :file
+  storage :fog
   
 
   # def rotate
