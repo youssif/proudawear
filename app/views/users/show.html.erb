@@ -1,26 +1,39 @@
 <!-- Users show view a with masonry -->
 <p id="notice"><%= notice %></p>
 
+<div class='container users'>
 <!-- Checks that user is logged in -->
-<% if current_user == @user %>
-	<h1> Post History </h1>
-  <!-- Formats the images so they recenter when screen size changes (Code borrowed from 'posts/index' view) -->
-  <div id="container" class= "js-masonry centered photos clearfix" data-masonry-options='{ "columnWidth": 0, "itemSelector": ".item", "gutter": 3 }'>
-    <!-- Displays only the current users posts -->
-    <% Post.all.each do |post| %>  
-      <% if post.name == @user.name && @user.name == current_user.name %>
-        <div class= "box item photo centered">
-          <%= link_to image_tag(post.picture_url), post %>
-          <p class="img-text"><%= post.title %></p>
-          <p class="img-text" id="descr"><%= post.description %></p>
+  <% if current_user == @user %>
+  	
+
+    <div class="post_container_wrapper users">
+      <center>
+      <div class="info_container users">
+        <h1> <%= current_user.name %>'s Post History </h1>
+        
+      </div>
+        <center>
+        <div id="container" class="js-masonry centered photos clearfix users" data-masonry-options='{ "columnWidth": 0, "itemSelector": ".item", "gutter": 3 }'>
+          <center>
+          <% Post.all.sort.reverse.each do |post| %>  
+            <% if post.name == @user.name && @user.name == current_user.name %>
+              <div class= "box item photo centered">
+                <%= link_to image_tag(post.picture_url), post %>
+              </div>
+            <% end %>
+          <% end %>
+          </center>
         </div>
-      <% end %>
-    <% end %>
-  </div>
-  <!-- Link to Home -->
-  <%= link_to 'Home', posts_path %>
-<% else %>
-	<p> You must be logged in as this user to view profile </p>
-<% end %>
+        </center>
+      </div>
+      </center>
+    </div>
+    <!-- Formats the images so they recenter when screen size changes (Code borrowed from 'posts/index' view) -->
+    <!-- Link to Home -->
+  <% else %>
+  	<p> You must be logged in as this user to view profile </p>
+  <% end %>
+
+</div>
 
 

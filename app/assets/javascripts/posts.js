@@ -17,9 +17,3 @@
 // }, 500);
 
 
-$(document).ready(function(){
-	if($(window).width()<550{
-		$('img.facebook_login').attr('src','smallfb.png');
-		console.log('hey there');
-	});
-})
