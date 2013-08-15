@@ -25,9 +25,16 @@
 // require masonry/box-maker
 // require masonry/jquery.loremimages.min
 
+
+$(window).load(function(){
+	$('#posts_container_wrapper').height('100%')
+	$('#posts_container').height('100%');
+});
+
 $(function() {
   $(document).foundation();	
 });
+
 
 var originalContent = $('a#user_name').html();
 
