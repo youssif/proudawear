@@ -4,8 +4,8 @@ class CreateReviews < ActiveRecord::Migration
       t.string :name
       t.string :picture
       t.text :review
-      t.string :user_id
-      t.string :post_id
+      t.references :user
+      t.references :post
 
       t.timestamps
     end
