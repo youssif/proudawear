@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 gem 'rails', '3.2.13'
 
@@ -23,6 +24,7 @@ group :production do
   gem 'pg'
 end
 
+gem 'figaro'
 gem 'carrierwave'
 gem 'masonry-rails'
 gem 'mini_magick'
