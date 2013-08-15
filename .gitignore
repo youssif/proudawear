@@ -17,3 +17,5 @@
 /vendor/bundle
 
 .env
+
+/public/uploads
