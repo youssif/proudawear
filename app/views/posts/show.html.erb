@@ -81,11 +81,15 @@
           <% unless @post.name == current_user.name %>
             <center>
             <div class='large-12 columns' id="post_photo">
+              <center>
               <h3 class="title" id="post_title">
                 <%= @post.title %>
               </h3>
+              </center>
+              <center>
               <p class="username" id="post_username">Posted by <%=@post.name%></p>
               <hr />
+            </center>
               <% if @post.picture.present? %>
                 <%= image_tag @post.picture, id:'user_post' %>
                 <hr />

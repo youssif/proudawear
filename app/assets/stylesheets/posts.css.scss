@@ -247,6 +247,7 @@ p#notice{
   h3.no_reviews{
     font-size: 1.8em;
     color: gray;
+    margin-bottom: 0em;
   }
 
   .row .small-5{
@@ -334,16 +335,17 @@ img.next{
   background: rgba(137, 210, 233, 0.66);
   border-radius: 2px;
   box-shadow: 0px 0px 3px #5870A3;
-  padding-top: 2em;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding-top: 0em;
+  padding-left: 0em;
+  padding-right: 0em;
   padding-bottom: 2em;
 }
 
 h3#post_title{
-  font-size: 2.5em;
+  font-size: 2.1em;
   line-height: 30px;
   margin-bottom: 21px;
+  padding-top: 1em;
 }
 
 p#post_username{
@@ -542,7 +544,7 @@ label.title{
 }
 
 .upload_photo#post_picture{
-  margin-left: 26%;
+  margin-left: 12%;
 }
 
 
