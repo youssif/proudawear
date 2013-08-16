@@ -46,6 +46,11 @@ $(window).resize(function(){
 		$('a#fb_login').css('width','5em').css('margin-top','-0.4em').css('margin-right','0em');
 		$('a#user_name').text('')
 		$('ul.logged_in').css('margin-right','-1.3em')
+		if ($(window).width()<405){
+			$('h3.proudawear_title').css('font-size', '1.5em');
+			$('h3.proudawear_title').css('margin-top', '0.8em');
+			$('ul.right.logged_in').css('margin-right','0em');
+		}
 	}
 	else{
 		$('img.facebook_login').attr('src', '<%= asset_path('Facebook_login.png') %>');
@@ -53,5 +58,6 @@ $(window).resize(function(){
 		$('a#user_name').html(originalContent);
 		$('ul.logged_in').css('margin-right','0em');
 	};
+
 })
   
